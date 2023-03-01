@@ -84,7 +84,7 @@ In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. 
 | DATA_LOCATION | data/churn_prototype |
 | ----------- | ----------- |
 | HIVE_DATABASE | data/default |
-| HIVE_TABLE | churn_protype_<<YOUR UNIQUE VALUE>> |
+| HIVE_TABLE | churn_protype_YOUR UNIQUE VALUE |
 
 
 ![envparams](images/envparams.png)
