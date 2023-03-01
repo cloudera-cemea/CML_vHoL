@@ -76,14 +76,14 @@ In a workspace, Projects view is the default and you’ll be presented with all 
 
 ![ampcard](images/ampcard.png)
 
+<span style="color:red">some *IMPORTANT!* text</span>.
 IMPORTANT!
 In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. Leave the other environment variables as is.
-DATA_LOCATION
-data/churn_prototype
-HIVE_DATABASE
-default
-HIVE_TABLE
-churn_protype_<<YOUR UNIQUE VALUE>>
+
+| DATA_LOCATION | data/churn_prototype |
+| HIVE_DATABASE | data/default |
+| HIVE_TABLE | churn_protype_<<YOUR UNIQUE VALUE>> |
+
 
 ![envparams](images/envparams.png)
 
@@ -91,6 +91,8 @@ churn_protype_<<YOUR UNIQUE VALUE>>
 | ----------- | ----------- |
 | Header | Title |
 | Paragraph | Text |
+
+<span style="color:red">some *red* text</span>.
 
 < Here I am >
 
