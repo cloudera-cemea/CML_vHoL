@@ -80,6 +80,13 @@ In a workspace, Projects view is the default and you’ll be presented with all 
 **IMPORTANT!**
 In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. Leave the other environment variables as is.
 
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+
+
 | ----------- | ----------- |
 | DATA_LOCATION | data/churn_prototype |
 | HIVE_DATABASE | data/default |
