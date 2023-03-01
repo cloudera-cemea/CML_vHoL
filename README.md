@@ -49,9 +49,48 @@ your given user name and password
 In case of success you should get to this home page of the CDP tenant:
 ![cdphomepage](images/cdphomepage.png)
 
-< todo: the next steps depend on whether we get the AMP or or a github link >
 
 ### Initialize the Project
+AMPs (Applied Machine Learning Prototypes) are reference Machine Learning projects that have been built by Cloudera Fast Forward Labs to provide quickstart examples and tutorials. AMPs are deployed into the Cloudera Machine Learning (CML) experience, which is a platform you can also build your own Machine Learning use cases on.
+
+- Go to the Workshop CDP Tenant
+- Navigate to the Machine Learning tile from the CDP Menu.
+- Click into the Workspace by clicking the Workspace name.
+
+![workspacelist](images/workspacelist.png)
+
+A Workspace is a cluster that runs on a kubernetes service to provide teams of data scientists a platform to develop, test, train, and ultimately deploy machine learning models. It is designed to deploy a small number of infra resources and then autoscale compute resources as needed when end users implement more workloads and use cases.
+
+- Click on *User Settings* in the left panel
+- Go to Environment Variables tab and set your WORKLOAD_PASSWORD (this is the same as your login password for your User0xx ).
+
+![password](images/password.png)
+
+In a workspace, Projects view is the default and you’ll be presented with all public (within your organization) and your own projects, if any. In this lab we will be creating a project based on Applied ML Prototype.
+
+- Click on *AMPs* in the side panel and search for “workshop”
+
+![amps](images/amps.png)
+
+- Click on the AMP card and then on *Configure Project*
+
+![ampcard](images/ampcard.png)
+
+IMPORTANT!
+In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. Leave the other environment variables as is.
+DATA_LOCATION
+data/churn_prototype
+HIVE_DATABASE
+default
+HIVE_TABLE
+churn_protype_<<YOUR UNIQUE VALUE>>
+
+![envparams](images/envparams.png)
+
+
+
+< Here I am >
+
 There are a couple of steps needed at the start to configure the Project and Workspace
 settings so each step will run sucessfully. You **must** run the project bootstrap
 before running other steps. If you just want to launch the model interpretability
