@@ -91,52 +91,9 @@ In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. 
 ![envparams](images/envparams.png)
 
 
+- Click *Launch Project*
+
 < Here I am >
-
-There are a couple of steps needed at the start to configure the Project and Workspace
-settings so each step will run sucessfully. You **must** run the project bootstrap
-before running other steps. If you just want to launch the model interpretability
-application without going through each step manually, then you can also deploy the
-complete project.
-
-***Project bootstrap***
-
-Open the file `0_bootstrap.py` in a normal workbench python3 session. You only need a
-1 vCPU / 2 GiB instance. Once the session is loaded, click **Run > Run All Lines**.
-This will file will create an Environment Variable for the project called **STORAGE**,
-which is the root of default file storage location for the Hive Metastore in the
-DataLake (e.g. `s3a://my-default-bucket`). It will also upload the data used in the
-project to `$STORAGE/datalake/data/churn/`. The original file comes as part of this
-git repo in the `raw` folder.
-
-***Deploy the Complete Project***
-
-If you just wish build the project artifacts without going through each step manually,
-run the `9_build_projet.py` file in a python3 session. Again a 1 vCPU / 2 GiB instance
-will be suffient. This script will:
-* run the bootstrap
-* then create the Hive Table and import the data
-* deploy the model
-* update the application files to use this new model
-* deploy the application
-* run the model drift simulation
-Once the script has completed you will see the new model and application are now available
-in the project.
-
-## Project Build
-If you want go through each of the steps manually to build and understand how the project
-works, follow the steps below. There is a lot more detail and explanation/comments in each
-of the files/notebooks so its worth looking into those. Follow the steps below and you
-will end up with a running application.
-
-### 0 Bootstrap
-Just to reiterate that you have run the bootstrap for this project before anything else.
-So make sure you run step 0 first.
-
-Open the file `0_bootstrap.py` in a normal workbench python3 session. You only need a
-1 CPU / 2 GB instance. Then **Run > Run All Lines**
-
-Wait until the script has finished (Reminder: there should appear a green bar instead of a red one at the bottom of the session)
 
 ## Lab 2: Data Loading and interactive Analysis (20 min)
 
@@ -164,10 +121,12 @@ Once you see the flashing red line on the bottom of the session pane turn steady
 
 You will be greeted with a pop-up window to get you started connecting to pre-populated Data Lake sources (e.g. virtual Data Warehouses). You could simply copy the code snippet provided and easily connect to, say, a Hive vDW. However, in this lab we won’t be using this feature.
 
+- Navigate to code/1_data_ingest.py
+
 
 ### 2 Explore Data
-This is a Jupyter Notebook that does some basic data exploration and visualistaion. It
-is to show how this would be part of the data science workflow.
+This is a Jupyter Notebook that does some basic data exploration and visualisation.
+Itis to show how this would be part of the data science workflow.
 
 ![data](images/data.png)
 
