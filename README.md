@@ -81,8 +81,9 @@ In a workspace, Projects view is the default and you’ll be presented with all 
 In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. Leave the other environment variables as is.
 
 
-| DATA_LOCATION | data/churn_prototype |
+| variable | value |
 | ----------- | ----------- |
+| DATA_LOCATION | data/churn_prototype |
 | HIVE_DATABASE | data/default |
 | HIVE_TABLE | churn_protype_YOUR UNIQUE VALUE |
 
