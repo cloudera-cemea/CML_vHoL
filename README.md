@@ -87,7 +87,10 @@ churn_protype_<<YOUR UNIQUE VALUE>>
 
 ![envparams](images/envparams.png)
 
-
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
 
 < Here I am >
 
