@@ -163,9 +163,8 @@ Click on *Sessions*  in the side panel to return to your running session
 
 ![runses](images/runses.png)
 
-Notebooks 2: Interactive Analysis with JupyterLab
 
-### 2 Explore Data
+### 2 Interactive Analysis with JupyterLab
 
 In the previous section you loaded a csv file with a python script. In this section you will perform more Python commands with Jupyter Notebooks. Notebooks have a “.ipynb” extension and need to be executed with a Session using the JupyterLabs editor.
 
@@ -190,12 +189,56 @@ Notebook cells are meant to be executed individually and give a more interactive
 As before, no code changes are required and more detailed instructions are included in the comments. There are two ways to run each cell. Click on the cell you want to run. Hit “Shift” + “Enter” on your keyboard. Use this approach if you want to execute each cell individually. If you use this approach, make sure to run cells top to bottom, as they depend on each other.
 
 Alternatively, open the “Run” menu from the top bar and then select “Run All”. Use this approach if you want to execute the entire notebook in bulk.
+
 ![juprunall](images/juprunall.png)
 
 
 With CML Runtimes, you can easily switch between different editors and work with multiple editors or programming environments in parallel if needed.  First you stored a Spark Dataframe as a Spark table in the “1_ingest_data.py” python script using the Workbench editor. Then you retrieved the data in notebook “2_data_exploration.ipynb” using a JupyterLab session via Spark SQL. Spark SQL allows you to easily exchange files across sessions. Your Spark table was tracked as Hive External Tables and automatically made available in Atlas, the Data Catalog, and CDW. This is powered by SDX integration and requires no work on the CDP Admin or Users. We will see more on this in Part 7.
 
 ## Lab 3: Model Training and mlflow experiments (20 min)
+
+When you are finished with notebook “2_data_exploration.ipynb” go ahead and move on to notebook “3_model_building.ipynb”. As before, no code changes are required.
+
+- While still in JupyterLab session,
+- navigate to code/3_model_building.ipynb
+- Execute all code in 3_model_building.ipynb
+
+In this notebook “3_model_building.ipynb” you create a model with SciKit Learn and Lime, and then store it in your project. Optionally, you could have saved it to Cloud Storage. CML allows you to work with any other libraries of your choice. This is the power of CML… any open source library and framework is one pip install away.
+
+- Click *Stop* to terminate your JupyterLab session
+- Return to *<- Project*  and *Sessions*   and to your single running session
+
+###Model training and mlflow Experiments
+
+After exploring the data and building an initial, baseline model the work of optimization (a.k.a. hyperparameter tuning) can start to take place. In this phase of an ML project, model training script is made to be more robust. Further, it is now time to find model parameters that provide the “best” outcome. Depending on the model type and business use case “best” may mean use of different metrics. For instance, in a model that is built to diagnose ailments, the rate of false negatives may be especially important to determine “best” model. In cybersecurity use case, it may be the rate of false positives that’s of most interest.
+
+To give Data Scientists flexibility to collect, record, and compare experiment runs, CML provides out-of-the-box mlflow Experiments as a framework to achieve this.
+
+- Inside a running Workbench session,
+- navigate to code/4_train_model.py
+- Click the *play button* in the top menu
+
+This script uses “kernel” and “max_iter” as the two parameters to manipulate during model training in order to achieve the best result. In our case, we’ll define “best” as the highest “test_score”.
+
+- While your script is running,
+- click on *<- Project* in the top panel
+- Click on *Experiments*  in the side bar
+- Click on Churn Model Tuning
+
+![explist](images/explist.png)
+
+
+As expected, higher number of max_iterations produces better result (higher test_score). Interestingly, the choice of kernel does not make a difference at higher max_iter values. We can choose linear as it allows for faster model training.
+
+- Select all runs with “linear” Kernel
+- Click *Compare*
+- Click the metric *test_score*
+
+![expcomp](images/expcomp.png)
+
+
+Built-in visualizations in mlflow allow for more detailed comparison of various experiment runs and outcomes.
+
 
 
 
