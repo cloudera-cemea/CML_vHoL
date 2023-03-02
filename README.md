@@ -93,11 +93,7 @@ In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. 
 
 - Click *Launch Project*
 
-< Here I am >
-
 ## Lab 2: Data Loading and interactive Analysis (20 min)
-
-***For here on currently still BS***
 
 ### 1 Ingest Data
 This script will read in the data csv from the file uploaded to the object store (s3/adls) setup
@@ -144,178 +140,69 @@ Furthermore, you can switch between different Spark versions at Session launch.
 
 In a real-life scenario, the underlying data may be shifting from week to week or even hour to hour. It may be necessary to run the ingestion process in CML on a recurring basis. Jobs allow any project script to be scheduled to run inside of an ML Workspace compute cluster.
 
+- Click on  *Project* in the top panel
+- Click on  *Jobs* in the side panel
+- Click *New Job*
+- Give your job a name (e.g. Ingestion Job) and select code/1_data_ingest.py as the Script to run
+- Toggle *Enable Spark*
+- Select Recurring as the Schedule from the dropdown and provide daily time for the job to run
+
+![job](images/job.png)
+
+
+- Scroll to the bottom of the page and click *Create Job*
+![job2](images/job2.png)
+
+
+Optionally, you can also manually trigger your job by clicking the *Run*   action button on the right.
+With Jobs you can schedule and orchestrate your batch scripts. Jobs allow you to build complex pipelines and are an essential part of any CI/CD or ML Ops pipeline. Typical use cases span from Spark ETL, Model Batch Scoring, A/B Testing and other model management related automations.
+Click on *Sessions*  in the side panel to return to your running session
+
+
+
+
+![runses](images/runses.png)
+
+Notebooks 2: Interactive Analysis with JupyterLab
 
 ### 2 Explore Data
-This is a Jupyter Notebook that does some basic data exploration and visualisation.
-Itis to show how this would be part of the data science workflow.
 
-![data](images/data.png)
+In the previous section you loaded a csv file with a python script. In this section you will perform more Python commands with Jupyter Notebooks. Notebooks have a “.ipynb” extension and need to be executed with a Session using the JupyterLabs editor.
 
-Open a Jupyter Notebook session (rather than a work bench): python3, 1 CPU, 2 GB and
-open the `2_data_exploration.ipynb` file.
+Launch a new session by selecting the three “vertical dots” on the right side of the top menu bar. If you are in full-screen mode, the *Sessions*  dropdown will appear without having to click into the menu.
 
-At the top of the page click **Cells > Run All**.
+Launch the new Session with the following settings:
 
-### 3 Model Building
-This is also a Jupyter Notebook to show the process of selecting and building the model
-to predict churn. It also shows more details on how the LIME model is created and a bit
-more on what LIME is actually doing.
+- Session Name: telco_churn_session_2
+- Editor: *JupyterLab*
+- Kernel: Python 3.7
+- Resource Profile: 1vCPU/2 GiB Memory
+- Runtime Edition: Standard
+- Runtime Version: Any available version
+- Enable Spark Add On: enable any Spark version *Enable Spark*
 
-Open a Jupyter Notebook session (rather than a work bench): python3, 1 CPU, 2 GB and
-open the `	3_model_building.ipynb` file.
+After a few moments the JupyterLab editor should have taken over the screen.
 
-At the top of the page click **Cells > Run All**.
+Open Notebook *code/2_data_exploration.ipynb* from the left side menu and investigate the code.
 
-### 4 Model Training
-A model pre-trained is saved with the repo has been and placed in the `models` directory.
-If you want to retrain the model, open the `4_train_models.py` file in a workbench  session:
-python3 1 vCPU, 2 GiB and run the file. The newly model will be saved in the models directory
-named `telco_linear`.
+Notebook cells are meant to be executed individually and give a more interactive flavor for coding and experimentation.
 
-There are 2 other ways of running the model training process
+As before, no code changes are required and more detailed instructions are included in the comments. There are two ways to run each cell. Click on the cell you want to run. Hit “Shift” + “Enter” on your keyboard. Use this approach if you want to execute each cell individually. If you use this approach, make sure to run cells top to bottom, as they depend on each other.
 
-***1. Jobs***
-
-The **[Jobs](https://docs.cloudera.com/machine-learning/cloud/jobs-pipelines/topics/ml-creating-a-job.html)**
-feature allows for adhoc, recurring and depend jobs to run specific scripts. To run this model
-training process as a job, create a new job by going to the Project window and clicking _Jobs >
-New Job_ and entering the following settings:
-* **Name** : Train Mdoel
-* **Script** : 4_train_models.py
-* **Arguments** : _Leave blank_
-* **Kernel** : Python 3
-* **Schedule** : Manual
-* **Engine Profile** : 1 vCPU / 2 GiB
-The rest can be left as is. Once the job has been created, click **Run** to start a manual
-run for that job.
-
-***2. Experiments***
-
-The other option is running an **[Experiment](https://docs.cloudera.com/machine-learning/cloud/experiments/topics/ml-running-an-experiment.html)**. Experiments run immediately and are used for testing different parameters in a model training process. In this instance it would be use for hyperparameter optimisation. To run an experiment, from the Project window click Experiments > Run Experiment with the following settings.
-* **Script** : 4_train_models.py
-* **Arguments** : 5 lbfgs 100 _(these the cv, solver and max_iter parameters to be passed to
-LogisticRegressionCV() function)
-* **Kernel** : Python 3
-* **Engine Profile** : 1 vCPU / 2 GiB
-
-Click **Start Run** and the expriment will be sheduled to build and run. Once the Run is
-completed you can view the outputs that are tracked with the experiment using the
-`cdsw.track_metrics` function. It's worth reading through the code to get a sense of what
-all is going on.
+Alternatively, open the “Run” menu from the top bar and then select “Run All”. Use this approach if you want to execute the entire notebook in bulk.
+![juprunall](images/juprunall.png)
 
 
-### 5 Serve Model
-The **[Models](https://docs.cloudera.com/machine-learning/cloud/models/topics/ml-creating-and-deploying-a-model.html)**
-is used top deploy a machine learning model into production for real-time prediction. To
-deploy the model trailed in the previous step, from  to the Project page, click **Models > New
-Model** and create a new model with the following details:
+With CML Runtimes, you can easily switch between different editors and work with multiple editors or programming environments in parallel if needed.  First you stored a Spark Dataframe as a Spark table in the “1_ingest_data.py” python script using the Workbench editor. Then you retrieved the data in notebook “2_data_exploration.ipynb” using a JupyterLab session via Spark SQL. Spark SQL allows you to easily exchange files across sessions. Your Spark table was tracked as Hive External Tables and automatically made available in Atlas, the Data Catalog, and CDW. This is powered by SDX integration and requires no work on the CDP Admin or Users. We will see more on this in Part 7.
 
-* **Name**: Explainer
-* **Description**: Explain customer churn prediction
-* **File**: 5_model_serve_explainer.py
-* **Function**: explain
-* **Input**:
-```
-{
-	"StreamingTV": "No",
-	"MonthlyCharges": 70.35,
-	"PhoneService": "No",
-	"PaperlessBilling": "No",
-	"Partner": "No",
-	"OnlineBackup": "No",
-	"gender": "Female",
-	"Contract": "Month-to-month",
-	"TotalCharges": 1397.475,
-	"StreamingMovies": "No",
-	"DeviceProtection": "No",
-	"PaymentMethod": "Bank transfer (automatic)",
-	"tenure": 29,
-	"Dependents": "No",
-	"OnlineSecurity": "No",
-	"MultipleLines": "No",
-	"InternetService": "DSL",
-	"SeniorCitizen": "No",
-	"TechSupport": "No"
-}
-```
-* **Kernel**: Python 3
-* **Engine Profile**: 1vCPU / 2 GiB Memory
-
-Leave the rest unchanged. Click **Deploy Model** and the model will go through the build
-process and deploy a REST endpoint. Once the model is deployed, you can test it is working
-from the model Model Overview page.
-
-_**Note: This is important**_
-
-Once the model is deployed, you must disable the additional model authentication feature. In the model settings page, untick **Enable Authentication**.
-
-![disable_auth](images/disable_auth.png)
-
-### 6 Deploy Application
-The next step is to deploy the Flask application. The **[Applications](https://docs.cloudera.com/machine-learning/cloud/applications/topics/ml-applications.html)** feature is still quite new for CML. For this project it is used to deploy a web based application that interacts with the underlying model created in the previous step.
-
-_**Note: This next step is important**_
-
-_In the deployed model from step 5, go to **Model > Settings** and make a note (i.e. copy) the
-"Access Key". It will look something like this (ie. mukd9sit7tacnfq2phhn3whc4unq1f38)_
-
-_From the Project level click on "Open Workbench" (note you don't actually have to Launch a
-session) in order to edit a file. Select the flask/single_view.html file and paste the Access
-Key in at line 19._
-
-`        const accessKey = "mp3ebluylxh4yn5h9xurh1r0430y76ca";`
-
-_Save the file (if it has not auto saved already) and go back to the Project._
-
-From the Go to the **Applications** section and select "New Application" with the following:
-* **Name**: Churn Analysis App
-* **Subdomain**: churn-app _(note: this needs to be unique, so if you've done this before,
-pick a more random subdomain name)_
-* **Script**: 6_application.py
-* **Kernel**: Python 3
-* **Engine Profile**: 1vCPU / 2 GiB Memory
+## Lab 3: Model Training and mlflow experiments (20 min)
 
 
-After the Application deploys, click on the blue-arrow next to the name. The initial view is a
-table of randomly selected from the dataset. This shows a global view of which features are
-most important for the predictor model. The reds show incresed importance for preditcting a
-cusomter that will churn and the blues for for customers that will not.
 
-![table_view](images/table_view.png)
+## Lab 4: Model Deployment (20 min)
 
-Clicking on any single row will show a "local" interpreted model for that particular data point
-instance. Here you can see how adjusting any one of the features will change the instance's
-churn prediction.
+## Lab 5: Interacting with the visual application (10 min)
 
+## Lab 6: CML Model Operations (15 min)
 
-![single_view_1](images/single_view_1.png)
-
-Changing the InternetService to DSL lowers the probablity of churn. *Note: this does not mean
-that changing the Internet Service to DSL cause the probability to go down, this is just what
-the model would predict for a customer with those data points*
-
-
-![single_view_2](images/single_view_2.png)
-
-### 7 Model Operations
-The final step is the model operations which consists of [Model Metrics](https://docs.cloudera.com/machine-learning/cloud/model-metrics/topics/ml-enabling-model-metrics.html)
-and [Model Governance](https://docs.cloudera.com/machine-learning/cloud/model-governance/topics/ml-enabling-model-governance.html)
-
-**Model Governance** is setup in the `0_bootstrap.py` script, which writes out the lineage.yml file at
-the start of the project. For the **Model Metrics** open a workbench session (1 vCPU / 2 GiB) and open the
-`7a_ml_ops_simulation.py` file. You need to set the `model_id` number from the model created in step 5 on line
-113. The model number is on the model's main page.
-
-![model_id](images/model_id.png)
-
-`model_id = "95"`
-
-From there, run the file. This goes through a process of simulating an model that drifts over
-over 1000 calls to the model. The file contains comments with details of how this is done.
-
-In the next step you can interact and display the model metrics. Open a workbench
-session (1 vCPU / 2 GiB) and open and run the `7b_ml_ops_visual.py` file. Again you
-need to set the `model_id` number from the model created in step 5 on line 53.
-The model number is on the model's main page.
-
-![model_accuracy](images/model_accuracy.png)
+## Lab 7: Model Lineage Tracking (20 min)
