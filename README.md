@@ -208,7 +208,7 @@ In this notebook “3_model_building.ipynb” you create a model with SciKit Lea
 - Click *Stop* to terminate your JupyterLab session
 - Return to *<- Project*  and *Sessions*   and to your single running session
 
-###Model training and mlflow Experiments
+### Model training and mlflow Experiments
 
 After exploring the data and building an initial, baseline model the work of optimization (a.k.a. hyperparameter tuning) can start to take place. In this phase of an ML project, model training script is made to be more robust. Further, it is now time to find model parameters that provide the “best” outcome. Depending on the model type and business use case “best” may mean use of different metrics. For instance, in a model that is built to diagnose ailments, the rate of false negatives may be especially important to determine “best” model. In cybersecurity use case, it may be the rate of false positives that’s of most interest.
 
@@ -240,9 +240,98 @@ As expected, higher number of max_iterations produces better result (higher test
 Built-in visualizations in mlflow allow for more detailed comparison of various experiment runs and outcomes.
 
 
-
-
 ## Lab 4: Model Deployment (20 min)
+
+Once a model is trained its predictions and insights must be put to use so they can add value to the organization. Generally this means using the model on new, unseen data in a production environment that offers key ML Ops capabilities.
+
+One such example is Batch Scoring via CML Jobs. The model is loaded in a script and the predict function provided by the ML framework is applied to data in batch. The script is scheduled and orchestrated to perform the scoring on a regular basis. In case of failures, the script or data are manually updated so the scoring can resume.
+
+This pattern is simple and reliable but has one pitfall. It requires the user or system waiting for the scoring job to run at its scheduled time. What if predictions are required on a short notice? Perhaps when a prospect navigates on an online shopping website or a potential anomaly is flagged by a third party business system?
+
+- CML Models allow you to deploy the same model script and model file in a REST Endpoint so the model can now serve responses in real time. The endpoint is hosted by a container.
+- CML Models provides tracking, metadata and versioning features that allow you to manage models in production.
+- Similarly, CML Applications allows you to deploy visual tools in an endpoint container. This is typically used to host apps with open source libraries such as Flask, Shiny, Streamlit and more.
+- Once a model is deployed to a CML Models container, a CML Application can forward requests to the Model endpoint to provide visual insights powered by ML models.
+
+Below are the steps to deploy a near-real-time scoring model:
+
+- Click on *Models*  in the side panel
+- Click *New Model*
+- Important! Name your model *Churn Model API Endpoint* .
+Any other name will cause issues with downstream scripts.
+- Important! Uncheck *Enable Authentication*
+- Under File select *code/5_model_serve_explainer.py*
+- Under Function enter *explain*
+- For Example Input enter the following JSON
+- You do not need to Enable Spark for model serving in this case
+
+This JSON is a set of key value pairs representing a customer’s attributes. For example, a customer who is currently on a DSL Internet Service plan.
+
+```
+{
+  "StreamingTV": "No",
+  "MonthlyCharges": 70.35,
+  "PhoneService": "No",
+  "PaperlessBilling": "No",
+  "Partner": "No",
+  "OnlineBackup": "No",
+  "gender": "Female",
+  "Contract": "Month-to-month",
+  "TotalCharges": 1397.475,
+  "StreamingMovies": "No",
+  "DeviceProtection": "No",
+  "PaymentMethod": "Bank transfer (automatic)",
+  "tenure": 29,
+  "Dependents": "No",
+  "OnlineSecurity": "No",
+  "MultipleLines": "No",
+  "InternetService": "DSL",
+  "SeniorCitizen": "No",
+  "TechSupport": "No"
+}
+```
+
+![depmodel](images/depmodel.png)
+
+- Scroll to the bottom of the page and click *Deploy Model*
+
+
+Model deployment may take a minute or two, meanwhile you can click on the Model name and explore the UI. The code for a sample request is provided on the left side. On the right side observe the model’s metadata. Each model is assigned a number of attributes including Model Name, Deployment, Build and creation timestamp.
+
+
+- Note down the *Build Id* of your model, we will need it in MLOps part of the workshops
+
+![modelui](images/modelui.png)
+
+
+- Once your model is Deployed, click *Test*
+
+The test simulates a request submission to the Model endpoint. The model processes the input and returns the output along with metadata and a prediction for the customer. In addition, the request is assigned a unique identifier. We will use this metadata for ML Ops later in part 6.  
+
+
+---------------------------------------------MLOps Aside---------------------------------------------------------------
+
+Before moving on to the next section, we will kick off a script to simulate real-world model performance.
+
+- Return to a running session () or start a new session if none are running
+- Navigate to code/7a_ml_ops_simulation.py
+- Run the entire script by clicking  in the top menu
+
+This will generate a 1000 calls to the model, while we explore other parts of CML. **Do not** wait for this script to finish. Proceed to the next part of the workshop.
+
+Script 5: Inspecting a Model Script
+
+Navigate back to the Project Overview page and open the *“5_model_serve_explainer.py”* script. Scroll down and familiarize yourself with the code.
+
+- Notice the method “explain” method. This is the Python function whose purpose is to receive the Json input as a request and return a Json output as a response.
+Within the method, the classifier object is used to apply the model object’s predict method.
+- In addition, notice that a decorator named “@cdsw.model_metrics” is applied to the “explain” method. Thanks to the decorator you can use the “cdsw.track_metric” methods inside the “explain” method to register each scalar value associated with each request.
+- The values are saved in the Model Metrics Store, a built in database used for tracking model requests.
+
+Navigate back to the Project Overview page. Open the “models/telco_linear” subfolder and notice the presence of the “telco_linear.pkl” file. This is the physical model file loaded by the .py script you just inspected above.
+
+![modelserveexplain](images/modelserveexplain.png)
+
 
 ## Lab 5: Interacting with the visual application (10 min)
 
