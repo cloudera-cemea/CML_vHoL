@@ -253,6 +253,8 @@ This pattern is simple and reliable but has one pitfall. It requires the user or
 - Similarly, CML Applications allows you to deploy visual tools in an endpoint container. This is typically used to host apps with open source libraries such as Flask, Shiny, Streamlit and more.
 - Once a model is deployed to a CML Models container, a CML Application can forward requests to the Model endpoint to provide visual insights powered by ML models.
 
+### Lets Deploy a scoring model
+
 Below are the steps to deploy a near-real-time scoring model:
 
 - Click on *Models*  in the side panel
@@ -309,7 +311,7 @@ Model deployment may take a minute or two, meanwhile you can click on the Model 
 The test simulates a request submission to the Model endpoint. The model processes the input and returns the output along with metadata and a prediction for the customer. In addition, the request is assigned a unique identifier. We will use this metadata for ML Ops later in part 6.  
 
 
----------------------------------------------MLOps Aside---------------------------------------------------------------
+### Lets simulate some real-world model performance for later purposes
 
 Before moving on to the next section, we will kick off a script to simulate real-world model performance.
 
@@ -319,7 +321,7 @@ Before moving on to the next section, we will kick off a script to simulate real
 
 This will generate a 1000 calls to the model, while we explore other parts of CML. **Do not** wait for this script to finish. Proceed to the next part of the workshop.
 
-Script 5: Inspecting a Model Script
+### Lets look into what we just deployed
 
 Navigate back to the Project Overview page and open the *“5_model_serve_explainer.py”* script. Scroll down and familiarize yourself with the code.
 
