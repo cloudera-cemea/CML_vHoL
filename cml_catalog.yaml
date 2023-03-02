@@ -1,17 +1,17 @@
 name: CML Workshop
-        
+
 entries:
-   - title: Clodera Machine Learning Workshop
+   - title: Cloudera Machine Learning Workshop
      label: churn-prediction
      short_description: Build an scikit-learn model to predict churn using customer telco data, with MlFlow Experiments
      long_description: >-
         This project is used for CML Workshop. It is based on Customer Churn AMP and highlights all of the major functionality of CML.
-        The project contains code to ingest and explore data, train a model, including experimentation with mlflow, deployment of the best model 
-        and tracking its performance with MLOps. An interactive Flask application is deployed as part of this project as well. 
+        The project contains code to ingest and explore data, train a model, including experimentation with mlflow, deployment of the best model
+        and tracking its performance with MLOps. An interactive Flask application is deployed as part of this project as well.
      image_path: "https://cdn.jsdelivr.net/gh/ogakulov/CML_AMP_Churn_Prediction_mlflow@347c9d4755fc161247b9fe80ad3e5ab96c5167e1/images/CML_workshop_cover.png"
      tags:
       - Churn Prediction
       - Support Vector Classiciation (SVC)
       - MlFlow Experiments
-     git_url: "https://github.com/ogakulov/CML_AMP_Churn_Prediction_mlflow" 
+     git_url: "https://github.com/vHoL-cloudera-cemea/CML_AMP_Churn_Prediction_mlflow"
      is_prototype: true
