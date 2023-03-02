@@ -257,9 +257,9 @@ Below are the steps to deploy a near-real-time scoring model:
 
 - Click on *Models*  in the side panel
 - Click *New Model*
-- Important! Name your model *Churn Model API Endpoint* .
+- **Important!** Name your model *Churn Model API Endpoint* .
 Any other name will cause issues with downstream scripts.
-- Important! Uncheck *Enable Authentication*
+- **Important!** Uncheck *Enable Authentication*
 - Under File select *code/5_model_serve_explainer.py*
 - Under Function enter *explain*
 - For Example Input enter the following JSON
