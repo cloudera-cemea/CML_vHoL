@@ -381,8 +381,8 @@ A more detailed view of the customer is automatically loaded. The customer has a
 The Lime model applied to the classifier provides a color coding scheme highlighting the most impactful features in the prediction label being applied to this specific customer.
 
 For example, this customer’s prediction of “will churn” is more significantly influenced by the “Internet Service” feature.
-The dark red color coding signals that the customer is negatively impacted by the current value for the feature.
-The current values of Monthly Charges and Phone Service also increase the likelihood of churn while the values of the Streaming Movies and Total Charges features decrease the likelihood of churn.
+- The dark red color coding signals that the customer is negatively impacted by the current value for the feature.
+- The current values of Monthly Charges and Phone Service also increase the likelihood of churn while the values of the Streaming Movies and Total Charges features decrease the likelihood of churn.
 
 ![apppage1](images/apppage1.png)
 
@@ -419,5 +419,50 @@ As always no code changes are required. Here are some key highlights:
 
 
 ## Lab 6: CML Model Operations (15 min)
+
+The following steps assume you have executed the* 7a_ml_ops_simulation.py* script as shown  in Lab 4. If you haven’t done it please go back and make sure to run the model simulation script.
+
+- Navigate back to the project overview and launch a new session with the following configurations.
+
+**Session Name: telco_churn_ops_session**
+**Editor: Workbench**
+**Kernel: Python 3.7**
+**Resource Profile: 1vCPU/2 GiB Memory**
+**Runtime Edition: Standard**
+**Runtime Version: Any available version**
+**Enable Spark Add On: any Spark version**
+
+- Once the session is running, open script *7b_ml_ops_visual.py* and explore the code in the editor.
+- Execute the whole script end to end without modifications.
+
+Observe the code outputs on the right side. Here are the key highlights:
+
+- Model predictions are tracked in the CML Models Metrics Store. This is enabled by the use of the Python decorator and the use of “cdsw.track_metrics” methods in script 5. What is being tracked is completely up to the script developer.
+- You can then extract the predictions and related metadata and put the information in a Pandas dataframe. Again, the Python library you use does not matter and is entirely up to the developer.
+- This is exactly what the first diagram on the right side of your screen shows. Each column represents a prediction request reaching your CML Model endpoint. Each row represents a metric you are tracking in the CML Models Metrics Store.
+
+![mlops1](images/mlops1.png)
+
+- Once the tracked metrics have been saved to a Python data structure they can be used for all sorts of purposes.
+- For example, the second diagram shows a basic line plot in Seaborn where the models’ output probabilities are plotted as a function of time. On the X axis you can see the timestamp associated with each request. On the Y axis you can find the associated output probability.
+
+![mlops2](images/mlops2.png)
+
+- Similarly, you can plot processing time as shown in the third diagram. This represents the time duration required to process a particular request.
+As an example, this information could be used to trigger the deployment of more resources to support this model endpoint when a particular threshold is passed. -  You can deploy more resources manually via the UI, or programmatically and in an automated CI/CD pipeline with CML APIv2 and CML Jobs.
+
+![mlops3](images/mlops3.png)
+
+- You can also monitor the model’s accuracy over time. For example, the below diagram shows a line plot of prediction accuracy sorted over time. As you can see, the trend is negative and the model is making increasingly less accurate predictions.
+- Just like with processing time and other metrics, CML allows you to implement ML Ops pipelines that automate actions related to model management. For example, you could use a combination of CML Jobs and CML APIv2 to trigger the retraining and redeployment of a model when its accuracy reaches a particular threshold over a particular time period.
+- As always this is a relatively basic example. CML is an open platform for hands-on developers which gives users the freedom to implement more complex ML Ops pipelines.
+
+![mlops4](images/mlops4.png)
+
+- Ground truth metrics can be collected with the cdsw.track_delayed_metrics method. This allows you to compare your predictions with the actual event after the prediction was output. In turn, this allows you to calculate the model accuracy and create visualizations such as the one above.
+- For an example of the cdsw.track_delayed_metrics method open the “7a_ml_ops_simulation.py” script and review lines 249 - 269. Keep in mind that this is just a simulation.
+- In a real world scenario the requests would be coming from an external system or be logged in a SQL or NoSQL database. In turn, the script above would be used to set  ground truth values in batch via a CML Job or in real time with a CML Model endpoint.
+
+
 
 ## Lab 7: Model Lineage Tracking (20 min)
