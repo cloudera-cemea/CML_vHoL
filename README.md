@@ -490,7 +490,7 @@ Take note of the metadata that is present here, including the source table name 
 - Click on the CDP environment you have been working in (where ML Workspace is deployed)
 - Click on *Atlas* under QUICK LINKS
 
-![lin3](images/lin3.png)
+![linx](images/linx.png)
 
 From the Atlas UI, search for ML models by entering the *ml_model_build* type. Notice that there are various Atlas entities to browse for models.
 
