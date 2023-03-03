@@ -38,7 +38,7 @@ If you are building this project from source code without automatic execution of
 
 ## Lab 1: Log in and Project Setup
 
-### Login into the CDP tenant
+#### Login into the CDP tenant
 
 You have been given a user name and password and a url to the CDP tenant in the chat.
 When you enter the url in your browser you get following login page, where you now enter
@@ -50,7 +50,7 @@ In case of success you should get to this home page of the CDP tenant:
 ![cdphomepage](images/cdphomepage.png)
 
 
-### Initialize the Project
+#### Initialize the Project
 AMPs (Applied Machine Learning Prototypes) are reference Machine Learning projects that have been built by Cloudera Fast Forward Labs to provide quickstart examples and tutorials. AMPs are deployed into the Cloudera Machine Learning (CML) experience, which is a platform you can also build your own Machine Learning use cases on.
 
 - Go to the Workshop CDP Tenant
@@ -95,7 +95,7 @@ In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. 
 
 ## Lab 2: Data Loading and interactive Analysis (20 min)
 
-### 1 Ingest Data
+#### Data Loading
 This script will read in the data csv from the file uploaded to the object store (s3/adls) setup
 during the bootstrap and create a managed table in Hive. This is all done using Spark.
 
@@ -164,7 +164,7 @@ Click on *Sessions*  in the side panel to return to your running session
 ![runses](images/runses.png)
 
 
-### 2 Interactive Analysis with JupyterLab
+#### Interactive Analysis with JupyterLab
 
 In the previous section you loaded a csv file with a python script. In this section you will perform more Python commands with Jupyter Notebooks. Notebooks have a “.ipynb” extension and need to be executed with a Session using the JupyterLabs editor.
 
@@ -208,7 +208,7 @@ In this notebook “3_model_building.ipynb” you create a model with SciKit Lea
 - Click *Stop* to terminate your JupyterLab session
 - Return to *<- Project*  and *Sessions*   and to your single running session
 
-### Model training and mlflow Experiments
+#### Model training and mlflow Experiments
 
 After exploring the data and building an initial, baseline model the work of optimization (a.k.a. hyperparameter tuning) can start to take place. In this phase of an ML project, model training script is made to be more robust. Further, it is now time to find model parameters that provide the “best” outcome. Depending on the model type and business use case “best” may mean use of different metrics. For instance, in a model that is built to diagnose ailments, the rate of false negatives may be especially important to determine “best” model. In cybersecurity use case, it may be the rate of false positives that’s of most interest.
 
@@ -253,7 +253,7 @@ This pattern is simple and reliable but has one pitfall. It requires the user or
 - Similarly, CML Applications allows you to deploy visual tools in an endpoint container. This is typically used to host apps with open source libraries such as Flask, Shiny, Streamlit and more.
 - Once a model is deployed to a CML Models container, a CML Application can forward requests to the Model endpoint to provide visual insights powered by ML models.
 
-### Lets Deploy a scoring model
+#### Lets Deploy a scoring model
 
 Below are the steps to deploy a near-real-time scoring model:
 
@@ -311,7 +311,7 @@ Model deployment may take a minute or two, meanwhile you can click on the Model 
 The test simulates a request submission to the Model endpoint. The model processes the input and returns the output along with metadata and a prediction for the customer. In addition, the request is assigned a unique identifier. We will use this metadata for ML Ops later in part 6.  
 
 
-### Lets simulate some real-world model performance for later purposes
+#### Lets simulate some real-world model performance for later purposes
 
 Before moving on to the next section, we will kick off a script to simulate real-world model performance.
 
@@ -321,7 +321,7 @@ Before moving on to the next section, we will kick off a script to simulate real
 
 This will generate a 1000 calls to the model, while we explore other parts of CML. **Do not** wait for this script to finish. Proceed to the next part of the workshop.
 
-### Lets look into what we just deployed
+#### Lets look into what we just deployed
 
 Navigate back to the Project Overview page and open the *“5_model_serve_explainer.py”* script. Scroll down and familiarize yourself with the code.
 
@@ -398,7 +398,7 @@ The table has now reloaded and the churn probability for this customer has drama
 This simple analysis can help the marketer optimise strategy in accordance to different business objectives. For example, the company could now tailor a proactive marketing offer based on this precious information. In addition, a more thorough financial analysis could be tied to the above simulation perhaps after adjusting the 50% threshold to increase or decrease selectivity based on business constraints or customer lifetime value assigned to each customer.  
 
 
-### Script 6: Exploring the Application Script
+#### Script 6: Exploring the Application Script
 
 - Navigate back to the CML Project Home folder.
 - Open the “Code” folder and then script “6_application.py”.
@@ -513,3 +513,28 @@ Familiarize yourself with the Model properties tab. Notice that each model logge
 Atlas and Ranger provides a rich set of Governance and Security capabilities. For example, you can apply Atlas tags to your entities across Data Services and then propagate Ranger policies to automatically secure applications across complex pipelines.
 
 A detailed exploration of SDX in the context of CML is not in scope for this workshop but please visit the “Next Steps” section to find out more on this and other topics.
+
+
+
+## Summary
+
+In this workshop you created an end to end project to support a Machine Learning model in Production.
+
+- You easily created a Spark Session and explored a large dataset with the PySpark library.
+- ... were able to switch between editors, resources, and optionally Python and Spark versions at the click of a button.
+- created a Model REST Endpoint to serve predictions to internal or external business applications.
+- Then, you built an interactive dashboard to make the “black box model” interpretable for your business stakeholders.
+- You explored the foundations of a basic ML Ops pipeline to easily retrain, monitor, and reproduce your model in production. With the CML Models interface you unit tested and increased model observability.
+- Finally, you used CDP SDX to log and visualize Model Metadata and Lineage.
+
+## Next Steps
+
+If you want to learn more about CML and CDP we invite you to visit the following assets and tutorials or ask your Cloudera Workshop Lead for a follow up.
+- [Learn how to use Cloudera Applied ML Prototypes](https://docs.cloudera.com/machine-learning/cloud/applied-ml-prototypes/topics/ml-amps-overview.html) to discover more CML Projects using MLFlow, Streamlit, Tensorflow, PyTorch and other popular libraries. The AMP Catalog is maintained by the Cloudera Fast Forward Labs team and allows you to automatically deploy complex use cases within minutes.
+- [CML HowTo](https://github.com/pdefusco/CML_HowTo) : A series of tips and tricks for the CML beginner
+- [Sentiment Analysis in R](https://github.com/pdefusco/simpsons_sentiment_analysis) : and end to end ML project with SparklyR and GPU training
+- [CSA2CML](https://github.com/pdefusco/CSA2CML) : Build a real time anomaly detection dashboard with Flink, CML, and Streamlit
+- [SDX2CML](https://github.com/pdefusco/SDX2CML) : Explore ML Governance and Security features in more detail to increase legal compliance and enhance ML Ops best practices.
+- [CML2CDE](https://github.com/pdefusco/CML2CDE) : Create CI/CD Pipelines for Spark ETL with CML Notebooks and CDE Virtual Cluster
+- [API v2](https://github.com/pdefusco/CML_AMP_APIv2) : Familiarize yourself with API v2, CML's goto Python Library for ML Ops and DevOps
+- [Distributed PyTorch with Horovod](https://github.com/pdefusco/Distributed_PyTorch_Horovod) : A quickstart for distributing Horovod with the CML Workers API
