@@ -466,3 +466,50 @@ As an example, this information could be used to trigger the deployment of more 
 
 
 ## Lab 7: Model Lineage Tracking (20 min)
+
+**IMPORTANT! Make sure you are connected to VPN for this part of the workshop.**
+
+This is needed to access Atlas inside of the CDP Data Lake.
+
+CDP is an end-to-end hybrid enterprise data platform. Every user, workload, and dataset and  machine learning model can be governed from a central location via SDX, the Shared Data Experience.
+
+Under the hood, SDX tracks and secures activity related to each CDP Data Service via “Hooks” and “Plugins”, including CML. If you want your models to be logged in SDX you have to add them to the lineage.yml file located in your project home folder.
+
+- Click on *Overview*  and find *lineage.yml* file
+- Click on the file to open
+
+![lin1](images/lin1.png)
+
+Take note of the metadata that is present here, including the source table name and the query used to create the training dataset. Additional metadata can be provided here.
+
+- Click on the top left corner menu (Bento menu)
+
+![lin2](images/lin2.png)
+
+- Click on *Management Console*
+- Click on the CDP environment you have been working in (where ML Workspace is deployed)
+- Click on *Atlas* under QUICK LINKS
+
+![lin3](images/lin3.png)
+
+From the Atlas UI, search for ML models by entering the *ml_model_build* type. Notice that there are various Atlas entities to browse for models.
+
+![lin4](images/lin4.png)
+
+
+In the output, you will see all models that your colleagues deployed in this workshop. Notice that each model is assigned a unique ID at the end. That ID corresponds to the Model Build from CML. Identify your model using the Build Id noted down when you deployed your model. select the model you created.
+Open your model by clicking its Model Name - Build Id.
+
+![lin5](images/lin5.png)
+
+Familiarize yourself with the Model properties tab. Notice that each model logged is associated with rich metadata. You can customize Atlas Model metadata by editing the lineage.yml file in the CML Project Home folder
+
+![lin6](images/lin6.png)
+
+
+![lin7](images/lin7.png)
+
+
+Atlas and Ranger provides a rich set of Governance and Security capabilities. For example, you can apply Atlas tags to your entities across Data Services and then propagate Ranger policies to automatically secure applications across complex pipelines.
+
+A detailed exploration of SDX in the context of CML is not in scope for this workshop but please visit the “Next Steps” section to find out more on this and other topics.
