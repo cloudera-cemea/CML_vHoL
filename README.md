@@ -337,6 +337,87 @@ Navigate back to the Project Overview page. Open the “models/telco_linear” s
 
 ## Lab 5: Interacting with the visual application (10 min)
 
+
+You have already seen that Cloudera Data Visualization is deployed in CML as an Application. In fact, any custom, UI app can be hosted within CML. These can be streamlit, Django, or Rshiny (or other frameworks) apps that deliver custom visualization or incorporate a real-time model scoring.
+
+In the following steps we will deploy an Application for the Churn Customer project:
+
+- Go to *Models* and click on the model that you’ve deployed
+- Go to the *Settings* tab and copy the *Access Key* string
+
+![modelkey](images/modelkey.png)
+
+- Navigate to *Files > flask > single_view.html*
+- **Important!** On line 61 of the file, update the access key value with the Access Key you got earlier.
+- Click *File > Save (or ⌘+S)*
+- Click on *Apllications*  in the side panel
+- Click on *New Application*
+- Give your application a name, and provide a **unique** subdomain
+- Under *Scripts* select *code/6_application.py*
+- Ensure that a *Workbench* editor is selected
+- and *Enable Spark* toggle is turned on
+
+![crapp](images/crapp.png)
+
+- Scroll the bottom of the page and click *Create Application*  
+
+Application startup can take up to 2 minutes, and once the application is ready you’ll see a card similar to this:
+
+![apprunning](images/apprunning.png)
+
+
+Click on the application in order to open it. This will automatically redirect you to the Visual Application landing page where the same data you worked with earlier is presented in an interactive table.
+
+On the left side notice the probability column. This is the target variable predicted by the Machine Learning Model. It reflects the probability of each customer churning. The value is between 0 and 1. A value of 0.49 represents a 49% probability of the customer churning. By default, if the probability is higher than 50% the classifier will label the customer as “will churn” and otherwise as “will not churn”.
+
+The 50% threshold can be increased or decreased implying customers previously assigned a “will churn” label may flip to “will not churn” and vice versa. This has important implications as it provides an avenue for tuning the level selectivity based on business considerations but a detailed explanation is beyond the scope of this content.
+
+- Next, click on the customer at the top of the table to investigate further.
+
+![apppage1](images/apppage1.png)
+
+A more detailed view of the customer is automatically loaded. The customer has a 58% chance of churning.
+
+The Lime model applied to the classifier provides a color coding scheme highlighting the most impactful features in the prediction label being applied to this specific customer.
+
+For example, this customer’s prediction of “will churn” is more significantly influenced by the “Internet Service” feature.
+The dark red color coding signals that the customer is negatively impacted by the current value for the feature.
+The current values of Monthly Charges and Phone Service also increase the likelihood of churn while the values of the Streaming Movies and Total Charges features decrease the likelihood of churn.
+
+![apppage1](images/apppage1.png)
+
+Let’s see what happens if we change the value for the most impactful feature in this given scenario i.e. “Internet Service”. Currently the value is set to “Fiber Optic”.
+
+- Hover over the entry in the table and select “DSL”.
+
+![apppage2](images/apppage2.png)
+
+
+The table has now reloaded and the churn probability for this customer has dramatically decreased to roughly 15%.
+
+This simple analysis can help the marketer optimise strategy in accordance to different business objectives. For example, the company could now tailor a proactive marketing offer based on this precious information. In addition, a more thorough financial analysis could be tied to the above simulation perhaps after adjusting the 50% threshold to increase or decrease selectivity based on business constraints or customer lifetime value assigned to each customer.  
+
+
+### Script 6: Exploring the Application Script
+
+- Navigate back to the CML Project Home folder.
+- Open the “Code” folder and then script “6_application.py”.
+
+This is a basic Flask application that serves the HTML and some specific data used for.
+
+- Click on “Open in Workbench” to visualize the code in a more reader friendly-mode.
+
+![apppage3](images/apppage3.png)
+
+
+Now you will be able to explore the code with the Workbench Editor. The “Launch Session” form will automatically load on the right side of your screen. There is no need to launch a session so you can just minimize it.
+
+As always no code changes are required. Here are some key highlights:
+
+- At lines 177 - 191 we load the model and use the “Explain” method to load a small dataset in the file. This is similar to what you did in script 5. If you want to display more data or fast changing data there are other ways to do this, for example with Cloudera SQL Stream Builder.  
+- At line 248 we run the app on the "CDSW_APP_PORT". This value is already preset for you as this is a default environment variable. You can reuse this port for other applications.
+
+
 ## Lab 6: CML Model Operations (15 min)
 
 ## Lab 7: Model Lineage Tracking (20 min)
