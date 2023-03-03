@@ -424,13 +424,13 @@ The following steps assume you have executed the* 7a_ml_ops_simulation.py* scrip
 
 - Navigate back to the project overview and launch a new session with the following configurations.
 
-**Session Name: telco_churn_ops_session**
-**Editor: Workbench**
-**Kernel: Python 3.7**
-**Resource Profile: 1vCPU/2 GiB Memory**
-**Runtime Edition: Standard**
-**Runtime Version: Any available version**
-**Enable Spark Add On: any Spark version**
+  - **Session Name: telco_churn_ops_session**
+  - **Editor: Workbench**
+  - **Kernel: Python 3.7**
+  - **Resource Profile: 1vCPU/2 GiB Memory**
+  - **Runtime Edition: Standard**
+  - **Runtime Version: Any available version**
+  - **Enable Spark Add On: any Spark version**
 
 - Once the session is running, open script *7b_ml_ops_visual.py* and explore the code in the editor.
 - Execute the whole script end to end without modifications.
