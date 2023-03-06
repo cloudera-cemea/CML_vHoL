@@ -32,10 +32,6 @@ By following the notebooks, scripts, and documentation in the `code` directory, 
 
 We will focus our attention on working within CML, using all it has to offer, while glossing over the details that are simply standard data science. We trust that you are familiar with typical data science workflows and do not need detailed explanations of the code.
 
-If you have deployed this project as an Applied ML Prototype (AMP), you will not need to run any of the setup steps outlined [in this document](code/README.md) as everything is already installed for you. However, you may still find it instructive to review the documentation and their corresponding files, and in particular run through `code/2_data_exploration.ipynb` and `code/3_model_building.ipynb` in a Jupyter Notebook session to see the process that informed the creation of the final model.
-
-If you are building this project from source code without automatic execution of project setup, then you should follow the steps listed [in this document](code/README.md) carefully and in order.
-
 ## Lab 1: Log in and Project Setup
 
 #### Login into the CDP tenant
@@ -96,10 +92,6 @@ In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. 
 ## Lab 2: Data Loading and interactive Analysis (20 min)
 
 #### Data Loading
-This script will read in the data csv from the file uploaded to the object store (s3/adls) setup
-during the bootstrap and create a managed table in Hive. This is all done using Spark.
-
-Open `1_data_ingest.py` in a Workbench session: python3, 1 CPU, 2 GB. Run the file.
 
 Sessions allow you to perform actions such as run R, Scala or Python code. They also provide access to an interactive command prompt and terminal. Sessions will be built on a specified Runtime Image, which is a docker container that is deployed onto the ML Workspace. In addition you can specify how much compute you want the session to use.
 
@@ -119,7 +111,7 @@ You will be greeted with a pop-up window to get you started connecting to pre-po
 
 Script 1: Ingest Data
 
-Navigate to code/1_data_ingest.py
+- Navigate to code/1_data_ingest.py
 
 In this script you will ingest a raw csv file into a Spark Dataframe. The script has a .py extension and therefore is ideally suited for execution with the Workbench editor. No modifications to the code are required and it can be executed as is.
 
