@@ -13,5 +13,5 @@ entries:
       - Churn Prediction
       - Support Vector Classiciation (SVC)
       - MlFlow Experiments
-     git_url: "https://github.com/vHoL-cloudera-cemea/CML_AMP_Churn_Prediction_mlflow"
+     git_url: "https://github.com/vHoL-cloudera-cemea/CML_vHoL_beta"
      is_prototype: true
