@@ -29,7 +29,7 @@ runtimes:
   - editor: Workbench
     kernel: Python 3.9
     edition: Standard
-    version: 2023.08
+    version: 2023.12
     addons: ["Spark 2.4.8 - CDE 1.19.2 - HOTFIX-2"]
 
 tasks:
