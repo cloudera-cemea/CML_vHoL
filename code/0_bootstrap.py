@@ -48,6 +48,9 @@
 # to store hive data. On AWS it will be s3a://[something], on Azure it will be
 # abfs://[something] and on a CDSW cluster, it will be hdfs://[something]
 
+# Install Cython as prerequisite
+!pip3 install Cython
+
 # Install the requirements
 !pip3 install -r requirements.txt
 
