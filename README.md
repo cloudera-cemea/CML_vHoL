@@ -83,10 +83,7 @@ In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. 
 | HIVE_DATABASE | default |
 | HIVE_TABLE | churn_protype_YOUR UNIQUE VALUE |
  
-<br/><br/>  
-
-class="center"
-
+<br/>
 <img src="images/envparams1.png" width="70%">
  
  <br/>
@@ -102,19 +99,22 @@ Sessions allow you to perform actions such as run R, Scala or Python code. They 
 
 - Click on *Overview* in the side panel
 - Click *New Session* in the top right corner
+<br/>
+<img src="images/startnewsession1.png" width="70%">
+<br/>
 
-![startnewsession](images/startnewsession.png)
 
 Before you start a new session you can give it a name, choose an editor (e.g. JupyterLab), what kernel you’d like to use (e.g. latest Python or R), whether you want to make Spark (and hdfs) libraries be available in your session, and finally the resource profile (CPU, memory, and GPU).
 - Ensure that Spark is enabled
 - Leave all other settings as is and click *start session*
+<br/>
 The Workbench is now starting up and deploying a container onto the workspace at this point. Going from left to right you will see the project files, editor pane, and session pane.
 
 Once you see the flashing red line on the bottom of the session pane turn steady green the container has been successfully started.
 
 You will be greeted with a pop-up window to get you started connecting to pre-populated Data Lake sources (e.g. virtual Data Warehouses). You could simply copy the code snippet provided and easily connect to, say, a Hive vDW. However, in this lab we won’t be using this feature.
 
-Script 1: Ingest Data
+**Script 1: Ingest Data**
 
 - Navigate to code/1_data_ingest.py
 
