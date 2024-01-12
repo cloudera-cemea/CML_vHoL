@@ -85,12 +85,12 @@ In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. 
  
 <br/><br/>  
 
-![envparams](images/envparams1.png)
+<img src="images/envparams1.png" width="70%">
  
  <br/><br/> 
- 
-
 - Click *Launch Project*
+
+ <br/><br/> 
 
 ## Lab 2: Data Loading and interactive Analysis (20 min)
 
