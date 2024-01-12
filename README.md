@@ -87,9 +87,9 @@ In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. 
 
 class="center"
 
-<img src="images/envparams1.png" width="70%" class="center">
+<img src="images/envparams1.png" width="70%">
  
- <br/><br/> 
+ <br/>
 - Click *Launch Project*
 
  <br/><br/> 
