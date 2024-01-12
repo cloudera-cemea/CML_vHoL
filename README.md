@@ -123,9 +123,12 @@ In this script you will ingest a raw csv file into a Spark Dataframe. The script
 You can execute the entire script in bulk by clicking on the “play icon” on the top menu bar. Once you do this you should notice the editor bar switches from green to red.
 As an alternative you can select subsets of the code and execute those only. This is great for troubleshooting and testing. To do so, highlight a number of lines of code from your script and then click on “Run” -> “Run Lines” from the top menu bar.
 
-Important! Run All lines in this script
+**Important! Run All lines in this script**
 
-![codesel](images/codesel.png)
+<br/>
+<img src="images/codesel1.png" width="70%">
+<br/>
+
 
 The code is explained in the script comments. However, here are a key few highlights:
 
