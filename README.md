@@ -53,7 +53,7 @@ AMPs (Applied Machine Learning Prototypes) are reference Machine Learning projec
 - Navigate to the Machine Learning tile from the CDP Menu.
 - Click into the Workspace by clicking the Workspace name.
 
-![workspacelist](images/workspacelist.pn)
+![workspacelist](images/workspacelist1.png)
 
 A Workspace is a cluster that runs on a kubernetes service to provide teams of data scientists a platform to develop, test, train, and ultimately deploy machine learning models. It is designed to deploy a small number of infra resources and then autoscale compute resources as needed when end users implement more workloads and use cases.
 
