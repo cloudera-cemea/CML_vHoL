@@ -147,21 +147,24 @@ In a real-life scenario, the underlying data may be shifting from week to week o
 - Toggle *Enable Spark*
 - Select Recurring as the Schedule from the dropdown and provide daily time for the job to run
 
-![job](images/job.png)
-
+<br/>
+<img src="images/job1.png" width="70%">
+<br/>
 
 - Scroll to the bottom of the page and click *Create Job*
-![job2](images/job2.png)
 
+<br/>
+<img src="images/job12.png" width="70%">
+<br/>
 
 Optionally, you can also manually trigger your job by clicking the *Run*   action button on the right.
 With Jobs you can schedule and orchestrate your batch scripts. Jobs allow you to build complex pipelines and are an essential part of any CI/CD or ML Ops pipeline. Typical use cases span from Spark ETL, Model Batch Scoring, A/B Testing and other model management related automations.
-Click on *Sessions*  in the side panel to return to your running session
 
+- Click on *Sessions*  in the side panel and on the *Session Name* to return to your running session
 
-
-
-![runses](images/runses.png)
+<br/>
+<img src="images/runses1.png" width="70%">
+<br/>
 
 
 #### Interactive Analysis with JupyterLab
