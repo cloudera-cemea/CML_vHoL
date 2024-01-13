@@ -171,17 +171,25 @@ With Jobs you can schedule and orchestrate your batch scripts. Jobs allow you to
 
 In the previous section you loaded a csv file with a python script. In this section you will perform more Python commands with Jupyter Notebooks. Notebooks have a “.ipynb” extension and need to be executed with a Session using the JupyterLabs editor.
 
-Launch a new session by selecting the three “vertical dots” on the right side of the top menu bar. If you are in full-screen mode, the *Sessions*  dropdown will appear without having to click into the menu.
+Launch a new session by selecting *New Session* in the menu bar in the top right side of the screen. If you are in full-screen mode, the *Sessions*  dropdown will appear without having to click into the menu.
+
+<br/>
+<img src="images/newsessionmenu.png" width="40%">
+<br/>
 
 Launch the new Session with the following settings:
 
 - Session Name: telco_churn_session_2
-- Editor: *JupyterLab*
+- **Important!** Editor: *JupyterLab*
 - Kernel: Python 3.7
 - Resource Profile: 1vCPU/2 GiB Memory
 - Runtime Edition: Standard
 - Runtime Version: Any available version
 - Enable Spark Add On: enable any Spark version *Enable Spark*
+
+<br/>
+<img src="images/labsession.png" width="70%">
+<br/>
 
 After a few moments the JupyterLab editor should have taken over the screen.
 
