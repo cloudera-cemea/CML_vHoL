@@ -237,8 +237,9 @@ This script uses “kernel” and “max_iter” as the two parameters to manipu
 - Click on *Experiments*  in the side bar
 - Click on Churn Model Tuning
 
-![explist](images/explist.png)
-
+<br/>
+<img src="images/explist1.png" width="70%">
+<br/>
 
 As expected, higher number of max_iterations produces better result (higher test_score). Interestingly, the choice of kernel does not make a difference at higher max_iter values. We can choose linear as it allows for faster model training.
 
@@ -246,7 +247,9 @@ As expected, higher number of max_iterations produces better result (higher test
 - Click *Compare*
 - Click the metric *test_score*
 
-![expcomp](images/expcomp.png)
+<br/>
+<img src="images/expcomp1.png" width="70%">
+<br/>
 
 
 Built-in visualizations in mlflow allow for more detailed comparison of various experiment runs and outcomes.
