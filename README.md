@@ -351,7 +351,10 @@ Within the method, the classifier object is used to apply the model object’s p
 
 Navigate back to the Project Overview page. Open the “models/telco_linear” subfolder and notice the presence of the “telco_linear.pkl” file. This is the physical model file loaded by the .py script you just inspected above.
 
-![modelserveexplain](images/modelserveexplain.png)
+<br/>
+<img src="images/modelserveexplain1.png" width="100%">
+<br/>
+
 
 
 ## Lab 5: Interacting with the visual application (10 min)
