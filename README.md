@@ -308,7 +308,9 @@ This JSON is a set of key value pairs representing a customer’s attributes. Fo
 }
 ```
 
-![depmodel](images/depmodel.png)
+<br/>
+<img src="images/depmodel1.png" width="70%">
+<br/>
 
 - Scroll to the bottom of the page and click *Deploy Model*
 
@@ -318,7 +320,9 @@ Model deployment may take a minute or two, meanwhile you can click on the Model 
 
 - Note down the *Build Id* of your model, we will need it in MLOps part of the workshops
 
-![modelui](images/modelui.png)
+<br/>
+<img src="images/modelui1.png" width="90%">
+<br/>
 
 
 - Once your model is Deployed, click *Test*
