@@ -158,7 +158,7 @@ ct = ColumnTransformer(
 
 # Instantiate a new set of experiments (mlflow experiment object)
 mlflow.set_experiment("Churn Model Tuning")
-mlflow.autolog(log_input_examples=True)
+# mlflow.autolog(log_input_examples=True)
 
 # Define a search grid
 kernel = ["linear", "rbf"]
