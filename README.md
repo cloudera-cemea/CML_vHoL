@@ -367,7 +367,9 @@ In the following steps we will deploy an Application for the Churn Customer proj
 - Go to *Models* and click on the model that you’ve deployed
 - Go to the *Settings* tab and copy the *Access Key* string
 
-![modelkey](images/modelkey.png)
+<br/>
+<img src="images/modelkey1.png" width="70%">
+<br/>
 
 - Navigate to *Files > flask > single_view.html*
 - **Important!** On line 61 of the file, update the access key value with the Access Key you got earlier.
@@ -379,13 +381,17 @@ In the following steps we will deploy an Application for the Churn Customer proj
 - Ensure that a *Workbench* editor is selected
 - and *Enable Spark* toggle is turned on
 
-![crapp](images/crapp.png)
+<br/>
+<img src="images/crapp1.png" width="70%">
+<br/>
 
 - Scroll the bottom of the page and click *Create Application*  
 
 Application startup can take up to 2 minutes, and once the application is ready you’ll see a card similar to this:
 
-![apprunning](images/apprunning.png)
+<br/>
+<img src="images/apprunning1.png" width="70%">
+<br/>
 
 
 Click on the application in order to open it. This will automatically redirect you to the Visual Application landing page where the same data you worked with earlier is presented in an interactive table.
