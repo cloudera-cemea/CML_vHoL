@@ -238,7 +238,7 @@ This script uses “kernel” and “max_iter” as the two parameters to manipu
 - Click on Churn Model Tuning
 
 <br/>
-<img src="images/explist1.png" width="70%">
+<img src="images/explist1.png" width="90%">
 <br/>
 
 As expected, higher number of max_iterations produces better result (higher test_score). Interestingly, the choice of kernel does not make a difference at higher max_iter values. We can choose linear as it allows for faster model training.
@@ -248,7 +248,7 @@ As expected, higher number of max_iterations produces better result (higher test
 - Click the metric *test_score*
 
 <br/>
-<img src="images/expcomp1.png" width="70%">
+<img src="images/expcomp1.png" width="90%">
 <br/>
 
 
@@ -321,7 +321,7 @@ Model deployment may take a minute or two, meanwhile you can click on the Model 
 - Note down the *Build Id* of your model, we will need it in MLOps part of the workshops
 
 <br/>
-<img src="images/modelui1.png" width="90%">
+<img src="images/modelui1.png" width="100%">
 <br/>
 
 
