@@ -390,7 +390,7 @@ In the following steps we will deploy an Application for the Churn Customer proj
 Application startup can take up to 2 minutes, and once the application is ready you’ll see a card similar to this:
 
 <br/>
-<img src="images/apprunning1.png" width="70%">
+<img src="images/apprunning1.png" width="40%">
 <br/>
 
 
