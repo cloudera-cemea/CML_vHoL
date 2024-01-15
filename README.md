@@ -32,6 +32,13 @@ By following the notebooks, scripts, and documentation in the `code` directory, 
 
 We will focus our attention on working within CML, using all it has to offer, while glossing over the details that are simply standard data science. We trust that you are familiar with typical data science workflows and do not need detailed explanations of the code.
 
+## Settings for virtual Hands-on Lab on January 16th 2024
+
+<br/>
+<img src="images/userassignment.png" width="70%">
+<br/>
+**In case you do not find yourself in the list, reserve one form user035 onward by posting this in the chat!**
+
 ## Lab 1: Log in and Project Setup
 
 #### Login into the CDP tenant
