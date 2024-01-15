@@ -181,7 +181,7 @@ Launch the new Session with the following settings:
 
 - Session Name: telco_churn_session_2
 - **Important!** Editor: *JupyterLab*
-- Kernel: Python 3.7
+- Kernel: Python 3.9
 - Resource Profile: 1vCPU/2 GiB Memory
 - Runtime Edition: Standard
 - Runtime Version: Any available version
@@ -448,7 +448,7 @@ The following steps assume you have executed the* 7a_ml_ops_simulation.py* scrip
 
   - **Session Name: telco_churn_ops_session**
   - **Editor: Workbench**
-  - **Kernel: Python 3.7**
+  - **Kernel: Python 3.9**
   - **Resource Profile: 1vCPU/2 GiB Memory**
   - **Runtime Edition: Standard**
   - **Runtime Version: Any available version**
