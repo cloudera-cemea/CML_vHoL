@@ -288,6 +288,7 @@ Any other name will cause issues with downstream scripts.
 - Under File select *code/5_model_serve_explainer.py*
 - Under Function enter *explain*
 - For Example Input enter the following JSON
+- Make sure the editor type is workbench!
 - You do not need to Enable Spark for model serving in this case
 
 This JSON is a set of key value pairs representing a customer’s attributes. For example, a customer who is currently on a DSL Internet Service plan.
