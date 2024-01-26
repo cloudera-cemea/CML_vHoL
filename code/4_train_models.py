@@ -57,7 +57,7 @@
 # feature allows for adhoc, recurring and depend jobs to run specific scripts. To run this model
 # training process as a job, create a new job by going to the Project window and clicking _Jobs >
 # New Job_ and entering the following settings:
-# * **Name** : Train Mdoel
+# * **Name** : Train Model
 # * **Script** : 4_train_models.py
 # * **Arguments** : _Leave blank_
 # * **Kernel** : Python 3
@@ -90,6 +90,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegressionCV
 from sklearn.compose import ColumnTransformer
 from lime.lime_tabular import LimeTabularExplainer
+import warnings
+warnings.filterwarnings('ignore', 'Solver terminated early.*')
 
 #MLFlow and additional model type for experimentation
 import mlflow
@@ -167,6 +169,8 @@ max_iter = [1, 10, 100, 1000, 10000]
 # Iterate over the grid, re-training the model every time and recording train and test score as the metrics
 for k in kernel:
   for i in max_iter:
+
+    print("Experimenting" + str(k) + " with " + str(i) + " iterations")
     
     # Start experiment run
     mlflow.start_run()
