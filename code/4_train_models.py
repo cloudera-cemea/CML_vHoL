@@ -170,7 +170,7 @@ max_iter = [1, 10, 100, 1000, 10000]
 for k in kernel:
   for i in max_iter:
 
-    print("Experimenting" + str(k) + " with " + str(i) + " iterations")
+    print("Experimenting " + str(k) + " with " + str(i) + " iterations")
     
     # Start experiment run
     mlflow.start_run()
