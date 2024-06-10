@@ -42,9 +42,11 @@ We will focus our attention on working within CML, using all it has to offer, wh
 Welcome to the virtual hands on Lab of June 11th. You all have been assigned a unique user name.
 Search for your first name and the initial of your last name and memorize the assigned user name.
 
-![userlist](images/userlist.png)
+<br/>
+<img src="images/userlist.png" width="70%">
+<br/>
+<br/>
 
-You have been given a user name and password and a url to the CDP tenant in the chat.
 When you enter the url in your browser you get following login page, where you now enter
 your given user name and password
 
