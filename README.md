@@ -40,6 +40,7 @@ We will focus our attention on working within CML, using all it has to offer, wh
 #### Login into the CDP tenant
 
 Welcome to the virtual hands on Lab of June 11th. You all have been assigned a unique user name.
+
 Search for your first name and the initial of your last name and memorize the assigned user name.
 
 <br/>
