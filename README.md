@@ -48,7 +48,7 @@ Search for your first name and the initial of your last name and memorize the as
 <br/>
 <br/>
 
-When you enter the url in your browser you get following login page, where you now enter
+When you enter the url in your browser, that was shared in the chat, you get following login page, where you now enter
 your given user name and password
 
 ![cdptenantmarketing](images/cdptenantmarketing.png)
