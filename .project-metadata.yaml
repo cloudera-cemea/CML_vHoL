@@ -1,28 +1,28 @@
-entries:
-  - title: CML Workshop
-    name: ML Churn Prototype
-    description: Prototype to demonstrate building a churn model on CML
-    author: Cloudera Inc.
-    specification_version: 1.0
-    prototype_version: 3.0
-    date: "2024-01-16"
-    environment_variables:
-       DATA_LOCATION:
-         default: my-data/churn_prototype
-         description: >-
-         Relative path that will be used to store the data used for this prototype.
-         This should be a location you have write access to, and which is suitable for non-production data.
-       HIVE_DATABASE:
-         default: default
-         description: >-
-         Name of the Hive database that will be used to create the Hive table used for this prototype.
-         This should be a Hive database you have write access to, and which is suitable for non-production data.
-       HIVE_TABLE:
-         default: churn_prototype
-         description: >-
-         Name of the Hive table that will be created and populated with the data used for this prototype.
-         If the table already exists, the prototype will assume it already contains the data for this prototype.
-    feature_dependencies:
+name: ML Churn Prototype
+description: Prototype to demonstrate building a churn model on CML
+author: Cloudera Inc.
+specification_version: 1.0
+prototype_version: 3.0
+date: "2024-01-16"
+
+environment_variables:
+  DATA_LOCATION:
+    default: my-data/churn_prototype
+    description: >-
+      Relative path that will be used to store the data used for this prototype.
+      This should be a location you have write access to, and which is suitable for non-production data.
+  HIVE_DATABASE:
+    default: default
+    description: >-
+      Name of the Hive database that will be used to create the Hive table used for this prototype.
+      This should be a Hive database you have write access to, and which is suitable for non-production data.
+  HIVE_TABLE:
+    default: churn_prototype
+    description: >-
+      Name of the Hive table that will be created and populated with the data used for this prototype.
+      If the table already exists, the prototype will assume it already contains the data for this prototype.
+
+feature_dependencies:
   - model_metrics
 
 runtimes:
