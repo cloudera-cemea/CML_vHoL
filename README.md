@@ -39,12 +39,12 @@ We will focus our attention on working within CML, using all it has to offer, wh
 
 #### Login into the CDP tenant
 
-Welcome to the virtual hands on Lab of June 11th. You all have been assigned a unique user name.
+Welcome to the virtual hands on Lab of October 2nd 2024. You all have been assigned a unique user name.
 
 Search for your first name and the initial of your last name and memorize the assigned user name.
 
 <br/>
-<img src="images/userlist.png" width="70%">
+<img src="images/participantlist.png" width="70%">
 <br/>
 <br/>
 
