@@ -384,6 +384,7 @@ In the following steps we will deploy an Application for the Churn Customer proj
 <br/>
 
 - Navigate to *Files > flask > single_view.html*
+- Click on *Open in Session* to get the file in edit mode (No Need to start the actual session)
 - **Important!** On line 61 of the file, update the access key value with the Access Key you got earlier.
 - Click *File > Save (or ⌘+S)*
 - Click on *Apllications*  in the side panel
