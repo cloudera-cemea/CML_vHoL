@@ -7,7 +7,7 @@ date: "2024-01-16"
 
 environment_variables:
   DATA_LOCATION:
-    default: my-data/churn_prototype
+    default: data/churn_prototype
     description: >-
       Relative path that will be used to store the data used for this prototype.
       This should be a location you have write access to, and which is suitable for non-production data.
