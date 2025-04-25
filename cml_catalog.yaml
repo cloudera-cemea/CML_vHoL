@@ -1,7 +1,7 @@
-name: CML Workshop
+name: Cloudera AI Workshop
 
 entries:
-   - title: Cloudera Machine Learning Workshop
+   - title: Cloudera AI Workbench Workshop
      label: churn-prediction
      short_description: Build an scikit-learn model to predict churn using customer telco data, with MlFlow Experiments
      long_description: >-
