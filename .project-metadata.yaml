@@ -1,9 +1,9 @@
 name: ML Churn Prototype
-description: Prototype to demonstrate building a churn model on CML
+description: Prototype to demonstrate building a churn model on Cloudera AI Workbench
 author: Cloudera Inc.
 specification_version: 1.0
 prototype_version: 3.0
-date: "2024-01-16"
+date: "2025-04-25"
 
 environment_variables:
   DATA_LOCATION:
