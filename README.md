@@ -1,9 +1,9 @@
 # Churn Modeling with scikit-learn
-This repository accompanies the [Visual Model Interpretability for Telco Churn](https://blog.cloudera.com/visual-model-interpretability-for-telco-churn-in-cloudera-data-science-workbench/) blog post and contains the code needed to build all project artifacts on CML. Additionally, this project serves as a working example of the concepts discussed in the Cloudera Fast Forward report on [Interpretability](https://ff06-2020.fastforwardlabs.com/) which is freely available for download.
+This repository accompanies the [Visual Model Interpretability for Telco Churn](https://blog.cloudera.com/visual-model-interpretability-for-telco-churn-in-cloudera-data-science-workbench/) blog post and contains the code needed to build all project artifacts on Cloudera AI. Additionally, this project serves as a working example of the concepts discussed in the Cloudera Fast Forward report on [Interpretability](https://ff06-2020.fastforwardlabs.com/) which is freely available for download.
 
 ![table_view](images/table_view.png)
 
-The primary goal of this repo is to build a logistic regression classification model to predict the probability that a group of customers will churn from a fictitious telecommunications company. In addition, the model is interpreted using a technique called [Local Interpretable Model-agnostic Explanations (LIME)](https://github.com/marcotcr/lime). Both the logistic regression and LIME models are deployed using CML's real-time model deployment capability and exercised via a basic Flask-based web application that allows users to interact with the model to see which factors in the data have the most influence on the probability of a customer churning.
+The primary goal of this repo is to build a logistic regression classification model to predict the probability that a group of customers will churn from a fictitious telecommunications company. In addition, the model is interpreted using a technique called [Local Interpretable Model-agnostic Explanations (LIME)](https://github.com/marcotcr/lime). Both the logistic regression and LIME models are deployed using Cloudera AI's real-time model deployment capability and exercised via a basic Flask-based web application that allows users to interact with the model to see which factors in the data have the most influence on the probability of a customer churning.
 
 ## Project Structure
 
@@ -22,7 +22,7 @@ The project is organized with the following folder structure:
 └── requirements.txt
 ```
 
-By following the notebooks, scripts, and documentation in the `code` directory, you will understand how to perform similar classification tasks on CML, as well as how to use the platform's major features to your advantage. These features include:
+By following the notebooks, scripts, and documentation in the `code` directory, you will understand how to perform similar classification tasks on Cloudera AI, as well as how to use the platform's major features to your advantage. These features include:
 
 - Data ingestion and manipulation with Spark
 - Streamlined model development and experimentation
@@ -30,7 +30,7 @@ By following the notebooks, scripts, and documentation in the `code` directory, 
 - Application hosting for deploying frontend ML applications
 - Model operations including model governance and tracking of mode performance metrics
 
-We will focus our attention on working within CML, using all it has to offer, while glossing over the details that are simply standard data science. We trust that you are familiar with typical data science workflows and do not need detailed explanations of the code.
+We will focus our attention on working within Cloudera AI, using all it has to offer, while glossing over the details that are simply standard data science. We trust that you are familiar with typical data science workflows and do not need detailed explanations of the code.
 
 
 
@@ -39,7 +39,7 @@ We will focus our attention on working within CML, using all it has to offer, wh
 
 #### Login into the CDP tenant
 
-Welcome to the virtual hands on Lab of October 2nd 2024. You all have been assigned a unique user name.
+Welcome to the virtual hands on Lab of April  2nd 2024. You all have been assigned a unique user name.
 
 Search for your first name and the initial of your last name and memorize the assigned user name.
 
@@ -58,7 +58,7 @@ In case of success you should get to this home page of the CDP tenant:
 
 
 #### Initialize the Project
-AMPs (Applied Machine Learning Prototypes) are reference Machine Learning projects that have been built by Cloudera Fast Forward Labs to provide quickstart examples and tutorials. AMPs are deployed into the Cloudera Machine Learning (CML) experience, which is a platform you can also build your own Machine Learning use cases on.
+AMPs (Applied Machine Learning Prototypes) are reference Machine Learning projects that have been built by Cloudera Fast Forward Labs to provide quickstart examples and tutorials. AMPs are deployed into the Cloudera Machine Learning (Cloudera AI) experience, which is a platform you can also build your own Machine Learning use cases on.
 
 - Go to the Workshop CDP Tenant
 - Navigate to the Machine Learning tile from the CDP Menu.
@@ -143,13 +143,13 @@ As an alternative you can select subsets of the code and execute those only. Thi
 
 The code is explained in the script comments. However, here are a key few highlights:
 
-- Because CML is integrated with SDX and CDP, you can easily retrieve large datasets from Cloud Storage (ADLS, S3, Ozone) with a simple line of code
+- Because Cloudera AI is integrated with SDX and CDP, you can easily retrieve large datasets from Cloud Storage (ADLS, S3, Ozone) with a simple line of code
 - Apache Spark is a general purpose framework for distributed computing that offers high performance for both batch and stream processing. It exposes APIs for Java, Python, R, and Scala, as well as an interactive shell for you to run jobs.
-- In Cloudera Machine Learning (CML), Spark and its dependencies are bundled directly into the CML runtime Docker image.
+- In Cloudera Machine Learning (Cloudera AI), Spark and its dependencies are bundled directly into the Cloudera AI runtime Docker image.
 Furthermore, you can switch between different Spark versions at Session launch.
 
 
-In a real-life scenario, the underlying data may be shifting from week to week or even hour to hour. It may be necessary to run the ingestion process in CML on a recurring basis. Jobs allow any project script to be scheduled to run inside of an ML Workspace compute cluster.
+In a real-life scenario, the underlying data may be shifting from week to week or even hour to hour. It may be necessary to run the ingestion process in Cloudera AI on a recurring basis. Jobs allow any project script to be scheduled to run inside of an ML Workspace compute cluster.
 
 - Click on  *Project* in the top panel
 - Click on  *Jobs* in the side panel
@@ -216,7 +216,7 @@ Alternatively, open the “Run” menu from the top bar and then select “Run A
 <img src="images/juprunall1.png" width="70%">
 <br/>
 
-With CML Runtimes, you can easily switch between different editors and work with multiple editors or programming environments in parallel if needed.  First you stored a Spark Dataframe as a Spark table in the “1_ingest_data.py” python script using the Workbench editor. Then you retrieved the data in notebook “2_data_exploration.ipynb” using a JupyterLab session via Spark SQL. Spark SQL allows you to easily exchange files across sessions. Your Spark table was tracked as Hive External Tables and automatically made available in Atlas, the Data Catalog, and CDW. This is powered by SDX integration and requires no work on the CDP Admin or Users. We will see more on this in Part 7.
+With Cloudera AI Runtimes, you can easily switch between different editors and work with multiple editors or programming environments in parallel if needed.  First you stored a Spark Dataframe as a Spark table in the “1_ingest_data.py” python script using the Workbench editor. Then you retrieved the data in notebook “2_data_exploration.ipynb” using a JupyterLab session via Spark SQL. Spark SQL allows you to easily exchange files across sessions. Your Spark table was tracked as Hive External Tables and automatically made available in Atlas, the Data Catalog, and CDW. This is powered by SDX integration and requires no work on the CDP Admin or Users. We will see more on this in Part 7.
 
 ## Lab 3: Model Training and mlflow experiments (20 min)
 
@@ -226,7 +226,7 @@ When you are finished with notebook “2_data_exploration.ipynb” go ahead and 
 - navigate to code/3_model_building.ipynb
 - Execute all code in 3_model_building.ipynb
 
-In this notebook “3_model_building.ipynb” you create a model with SciKit Learn and Lime, and then store it in your project. Optionally, you could have saved it to Cloud Storage. CML allows you to work with any other libraries of your choice. This is the power of CML… any open source library and framework is one pip install away.
+In this notebook “3_model_building.ipynb” you create a model with SciKit Learn and Lime, and then store it in your project. Optionally, you could have saved it to Cloud Storage. Cloudera AI allows you to work with any other libraries of your choice. This is the power of Cloudera AI… any open source library and framework is one pip install away.
 
 - Click *Stop* to terminate your JupyterLab session
 - Return to *<- Project*  and *Sessions*   and to your single running session
@@ -235,7 +235,7 @@ In this notebook “3_model_building.ipynb” you create a model with SciKit Lea
 
 After exploring the data and building an initial, baseline model the work of optimization (a.k.a. hyperparameter tuning) can start to take place. In this phase of an ML project, model training script is made to be more robust. Further, it is now time to find model parameters that provide the “best” outcome. Depending on the model type and business use case “best” may mean use of different metrics. For instance, in a model that is built to diagnose ailments, the rate of false negatives may be especially important to determine “best” model. In cybersecurity use case, it may be the rate of false positives that’s of most interest.
 
-To give Data Scientists flexibility to collect, record, and compare experiment runs, CML provides out-of-the-box mlflow Experiments as a framework to achieve this.
+To give Data Scientists flexibility to collect, record, and compare experiment runs, Cloudera AI provides out-of-the-box mlflow Experiments as a framework to achieve this.
 
 - Inside a running Workbench session,
 - navigate to code/4_train_model.py
@@ -270,14 +270,14 @@ Built-in visualizations in mlflow allow for more detailed comparison of various 
 
 Once a model is trained its predictions and insights must be put to use so they can add value to the organization. Generally this means using the model on new, unseen data in a production environment that offers key ML Ops capabilities.
 
-One such example is Batch Scoring via CML Jobs. The model is loaded in a script and the predict function provided by the ML framework is applied to data in batch. The script is scheduled and orchestrated to perform the scoring on a regular basis. In case of failures, the script or data are manually updated so the scoring can resume.
+One such example is Batch Scoring via Cloudera AI Jobs. The model is loaded in a script and the predict function provided by the ML framework is applied to data in batch. The script is scheduled and orchestrated to perform the scoring on a regular basis. In case of failures, the script or data are manually updated so the scoring can resume.
 
 This pattern is simple and reliable but has one pitfall. It requires the user or system waiting for the scoring job to run at its scheduled time. What if predictions are required on a short notice? Perhaps when a prospect navigates on an online shopping website or a potential anomaly is flagged by a third party business system?
 
-- CML Models allow you to deploy the same model script and model file in a REST Endpoint so the model can now serve responses in real time. The endpoint is hosted by a container.
-- CML Models provides tracking, metadata and versioning features that allow you to manage models in production.
-- Similarly, CML Applications allows you to deploy visual tools in an endpoint container. This is typically used to host apps with open source libraries such as Flask, Shiny, Streamlit and more.
-- Once a model is deployed to a CML Models container, a CML Application can forward requests to the Model endpoint to provide visual insights powered by ML models.
+- Cloudera AI Models allow you to deploy the same model script and model file in a REST Endpoint so the model can now serve responses in real time. The endpoint is hosted by a container.
+- Cloudera AI Models provides tracking, metadata and versioning features that allow you to manage models in production.
+- Similarly, Cloudera AI Applications allows you to deploy visual tools in an endpoint container. This is typically used to host apps with open source libraries such as Flask, Shiny, Streamlit and more.
+- Once a model is deployed to a Cloudera AI Models container, a Cloudera AI Application can forward requests to the Model endpoint to provide visual insights powered by ML models.
 
 #### Lets Deploy a scoring model
 
@@ -350,7 +350,7 @@ Before moving on to the next section, we will kick off a script to simulate real
 - Navigate to code/7a_ml_ops_simulation.py
 - Run the entire script by clicking  in the top menu
 
-This will generate a 1000 calls to the model, while we explore other parts of CML. **Do not** wait for this script to finish. Proceed to the next part of the workshop.
+This will generate a 1000 calls to the model, while we explore other parts of Cloudera AI. **Do not** wait for this script to finish. Proceed to the next part of the workshop.
 
 #### Lets look into what we just deployed
 
@@ -372,7 +372,7 @@ Navigate back to the Project Overview page. Open the “models/telco_linear” s
 ## Lab 5: Interacting with the visual application (10 min)
 
 
-You have already seen that Cloudera Data Visualization is deployed in CML as an Application. In fact, any custom, UI app can be hosted within CML. These can be streamlit, Django, or Rshiny (or other frameworks) apps that deliver custom visualization or incorporate a real-time model scoring.
+You have already seen that Cloudera Data Visualization is deployed in Cloudera AI as an Application. In fact, any custom, UI app can be hosted within Cloudera AI. These can be streamlit, Django, or Rshiny (or other frameworks) apps that deliver custom visualization or incorporate a real-time model scoring.
 
 In the following steps we will deploy an Application for the Churn Customer project:
 
@@ -441,7 +441,7 @@ This simple analysis can help the marketer optimise strategy in accordance to di
 
 #### Script 6: Exploring the Application Script
 
-- Navigate back to the CML Project Home folder.
+- Navigate back to the Cloudera AI Project Home folder.
 - Open the “Code” folder and then script “6_application.py”.
 
 This is a basic Flask application that serves the HTML and some specific data used for.
@@ -459,7 +459,7 @@ As always no code changes are required. Here are some key highlights:
 - At line 248 we run the app on the "CDSW_APP_PORT". This value is already preset for you as this is a default environment variable. You can reuse this port for other applications.
 
 
-## Lab 6: CML Model Operations (15 min)
+## Lab 6: Cloudera AI Model Operations (15 min)
 
 The following steps assume you have executed the* 7a_ml_ops_simulation.py* script as shown  in Lab 4. If you haven’t done it please go back and make sure to run the model simulation script.
 
@@ -478,9 +478,9 @@ The following steps assume you have executed the* 7a_ml_ops_simulation.py* scrip
 
 Observe the code outputs on the right side. Here are the key highlights:
 
-- Model predictions are tracked in the CML Models Metrics Store. This is enabled by the use of the Python decorator and the use of “cdsw.track_metrics” methods in script 5. What is being tracked is completely up to the script developer.
+- Model predictions are tracked in the Cloudera AI Models Metrics Store. This is enabled by the use of the Python decorator and the use of “cdsw.track_metrics” methods in script 5. What is being tracked is completely up to the script developer.
 - You can then extract the predictions and related metadata and put the information in a Pandas dataframe. Again, the Python library you use does not matter and is entirely up to the developer.
-- This is exactly what the first diagram on the right side of your screen shows. Each column represents a prediction request reaching your CML Model endpoint. Each row represents a metric you are tracking in the CML Models Metrics Store.
+- This is exactly what the first diagram on the right side of your screen shows. Each column represents a prediction request reaching your Cloudera AI Model endpoint. Each row represents a metric you are tracking in the Cloudera AI Models Metrics Store.
 
 ![mlops1](images/mlops1.png)
 
@@ -490,19 +490,19 @@ Observe the code outputs on the right side. Here are the key highlights:
 ![mlops2](images/mlops2.png)
 
 - Similarly, you can plot processing time as shown in the third diagram. This represents the time duration required to process a particular request.
-As an example, this information could be used to trigger the deployment of more resources to support this model endpoint when a particular threshold is passed. -  You can deploy more resources manually via the UI, or programmatically and in an automated CI/CD pipeline with CML APIv2 and CML Jobs.
+As an example, this information could be used to trigger the deployment of more resources to support this model endpoint when a particular threshold is passed. -  You can deploy more resources manually via the UI, or programmatically and in an automated CI/CD pipeline with Cloudera AI APIv2 and Cloudera AI Jobs.
 
 ![mlops3](images/mlops3.png)
 
 - You can also monitor the model’s accuracy over time. For example, the below diagram shows a line plot of prediction accuracy sorted over time. As you can see, the trend is negative and the model is making increasingly less accurate predictions.
-- Just like with processing time and other metrics, CML allows you to implement ML Ops pipelines that automate actions related to model management. For example, you could use a combination of CML Jobs and CML APIv2 to trigger the retraining and redeployment of a model when its accuracy reaches a particular threshold over a particular time period.
-- As always this is a relatively basic example. CML is an open platform for hands-on developers which gives users the freedom to implement more complex ML Ops pipelines.
+- Just like with processing time and other metrics, Cloudera AI allows you to implement ML Ops pipelines that automate actions related to model management. For example, you could use a combination of Cloudera AI Jobs and Cloudera AI APIv2 to trigger the retraining and redeployment of a model when its accuracy reaches a particular threshold over a particular time period.
+- As always this is a relatively basic example. Cloudera AI is an open platform for hands-on developers which gives users the freedom to implement more complex ML Ops pipelines.
 
 ![mlops4](images/mlops4.png)
 
 - Ground truth metrics can be collected with the cdsw.track_delayed_metrics method. This allows you to compare your predictions with the actual event after the prediction was output. In turn, this allows you to calculate the model accuracy and create visualizations such as the one above.
 - For an example of the cdsw.track_delayed_metrics method open the “7a_ml_ops_simulation.py” script and review lines 249 - 269. Keep in mind that this is just a simulation.
-- In a real world scenario the requests would be coming from an external system or be logged in a SQL or NoSQL database. In turn, the script above would be used to set  ground truth values in batch via a CML Job or in real time with a CML Model endpoint.
+- In a real world scenario the requests would be coming from an external system or be logged in a SQL or NoSQL database. In turn, the script above would be used to set  ground truth values in batch via a Cloudera AI Job or in real time with a Cloudera AI Model endpoint.
 
 
 
@@ -514,7 +514,7 @@ This is needed to access Atlas inside of the CDP Data Lake.
 
 CDP is an end-to-end hybrid enterprise data platform. Every user, workload, and dataset and  machine learning model can be governed from a central location via SDX, the Shared Data Experience.
 
-Under the hood, SDX tracks and secures activity related to each CDP Data Service via “Hooks” and “Plugins”, including CML. If you want your models to be logged in SDX you have to add them to the lineage.yml file located in your project home folder.
+Under the hood, SDX tracks and secures activity related to each CDP Data Service via “Hooks” and “Plugins”, including Cloudera AI. If you want your models to be logged in SDX you have to add them to the lineage.yml file located in your project home folder.
 
 - Click on *Overview*  and find *lineage.yml* file
 - Click on the file to open
@@ -538,12 +538,12 @@ From the Atlas UI, search for ML models by entering the *ml_model_build* type. N
 ![lin4](images/lin4.png)
 
 
-In the output, you will see all models that your colleagues deployed in this workshop. Notice that each model is assigned a unique ID at the end. That ID corresponds to the Model Build from CML. Identify your model using the Build Id noted down when you deployed your model. select the model you created.
+In the output, you will see all models that your colleagues deployed in this workshop. Notice that each model is assigned a unique ID at the end. That ID corresponds to the Model Build from Cloudera AI. Identify your model using the Build Id noted down when you deployed your model. select the model you created.
 Open your model by clicking its Model Name - Build Id.
 
 ![lin5](images/lin5.png)
 
-Familiarize yourself with the Model properties tab. Notice that each model logged is associated with rich metadata. You can customize Atlas Model metadata by editing the lineage.yml file in the CML Project Home folder
+Familiarize yourself with the Model properties tab. Notice that each model logged is associated with rich metadata. You can customize Atlas Model metadata by editing the lineage.yml file in the Cloudera AI Project Home folder
 
 ![lin6](images/lin6.png)
 
@@ -553,7 +553,7 @@ Familiarize yourself with the Model properties tab. Notice that each model logge
 
 Atlas and Ranger provides a rich set of Governance and Security capabilities. For example, you can apply Atlas tags to your entities across Data Services and then propagate Ranger policies to automatically secure applications across complex pipelines.
 
-A detailed exploration of SDX in the context of CML is not in scope for this workshop but please visit the “Next Steps” section to find out more on this and other topics.
+A detailed exploration of SDX in the context of Cloudera AI is not in scope for this workshop but please visit the “Next Steps” section to find out more on this and other topics.
 
 
 
@@ -565,17 +565,17 @@ In this workshop you created an end to end project to support a Machine Learning
 - ... were able to switch between editors, resources, and optionally Python and Spark versions at the click of a button.
 - created a Model REST Endpoint to serve predictions to internal or external business applications.
 - Then, you built an interactive dashboard to make the “black box model” interpretable for your business stakeholders.
-- You explored the foundations of a basic ML Ops pipeline to easily retrain, monitor, and reproduce your model in production. With the CML Models interface you unit tested and increased model observability.
+- You explored the foundations of a basic ML Ops pipeline to easily retrain, monitor, and reproduce your model in production. With the Cloudera AI Models interface you unit tested and increased model observability.
 - Finally, you used CDP SDX to log and visualize Model Metadata and Lineage.
 
 ## Next Steps
 
-If you want to learn more about CML and CDP we invite you to visit the following assets and tutorials or ask your Cloudera Workshop Lead for a follow up.
-- [Learn how to use Cloudera Applied ML Prototypes](https://docs.cloudera.com/machine-learning/cloud/applied-ml-prototypes/topics/ml-amps-overview.html) to discover more CML Projects using MLFlow, Streamlit, Tensorflow, PyTorch and other popular libraries. The AMP Catalog is maintained by the Cloudera Fast Forward Labs team and allows you to automatically deploy complex use cases within minutes.
-- [CML HowTo](https://github.com/pdefusco/CML_HowTo) : A series of tips and tricks for the CML beginner
+If you want to learn more about Cloudera AI and CDP we invite you to visit the following assets and tutorials or ask your Cloudera Workshop Lead for a follow up.
+- [Learn how to use Cloudera Applied ML Prototypes](https://docs.cloudera.com/machine-learning/cloud/applied-ml-prototypes/topics/ml-amps-overview.html) to discover more Cloudera AI Projects using MLFlow, Streamlit, Tensorflow, PyTorch and other popular libraries. The AMP Catalog is maintained by the Cloudera Fast Forward Labs team and allows you to automatically deploy complex use cases within minutes.
+- [Cloudera AI HowTo](https://github.com/pdefusco/Cloudera AI_HowTo) : A series of tips and tricks for the Cloudera AI beginner
 - [Sentiment Analysis in R](https://github.com/pdefusco/simpsons_sentiment_analysis) : and end to end ML project with SparklyR and GPU training
-- [CSA2CML](https://github.com/pdefusco/CSA2CML) : Build a real time anomaly detection dashboard with Flink, CML, and Streamlit
-- [SDX2CML](https://github.com/pdefusco/SDX2CML) : Explore ML Governance and Security features in more detail to increase legal compliance and enhance ML Ops best practices.
-- [CML2CDE](https://github.com/pdefusco/CML2CDE) : Create CI/CD Pipelines for Spark ETL with CML Notebooks and CDE Virtual Cluster
-- [API v2](https://github.com/pdefusco/CML_AMP_APIv2) : Familiarize yourself with API v2, CML's goto Python Library for ML Ops and DevOps
-- [Distributed PyTorch with Horovod](https://github.com/pdefusco/Distributed_PyTorch_Horovod) : A quickstart for distributing Horovod with the CML Workers API
+- [CSA2Cloudera AI](https://github.com/pdefusco/CSA2Cloudera AI) : Build a real time anomaly detection dashboard with Flink, Cloudera AI, and Streamlit
+- [SDX2Cloudera AI](https://github.com/pdefusco/SDX2Cloudera AI) : Explore ML Governance and Security features in more detail to increase legal compliance and enhance ML Ops best practices.
+- [Cloudera AI2CDE](https://github.com/pdefusco/Cloudera AI2CDE) : Create CI/CD Pipelines for Spark ETL with Cloudera AI Notebooks and CDE Virtual Cluster
+- [API v2](https://github.com/pdefusco/Cloudera AI_AMP_APIv2) : Familiarize yourself with API v2, Cloudera AI's goto Python Library for ML Ops and DevOps
+- [Distributed PyTorch with Horovod](https://github.com/pdefusco/Distributed_PyTorch_Horovod) : A quickstart for distributing Horovod with the Cloudera AI Workers API
