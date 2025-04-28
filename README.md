@@ -342,7 +342,7 @@ Model deployment may take a minute or two, meanwhile you can click on the Model 
 The test simulates a request submission to the Model endpoint. The model processes the input and returns the output along with metadata and a prediction for the customer. In addition, the request is assigned a unique identifier. We will use this metadata for ML Ops later in part 6.  
 
 
-#### Lets simulate some real-world model performance for later purposes
+#### Optional Exercise: Lets simulate some real-world model performance for later purposes
 
 Before moving on to the next section, we will kick off a script to simulate real-world model performance.
 
@@ -459,9 +459,9 @@ As always no code changes are required. Here are some key highlights:
 - At line 248 we run the app on the "CDSW_APP_PORT". This value is already preset for you as this is a default environment variable. You can reuse this port for other applications.
 
 
-## Lab 6: Cloudera AI Model Operations (15 min)
+## Optional Lab 6: Cloudera AI Model Operations (15 min)
 
-The following steps assume you have executed the* 7a_ml_ops_simulation.py* script as shown  in Lab 4. If you haven’t done it please go back and make sure to run the model simulation script.
+The following steps assume you have executed the* 7a_ml_ops_simulation.py* script as shown in Lab 4. If you haven’t done it please go back and make sure to run the model simulation script.
 
 - Navigate back to the project overview and launch a new session with the following configurations.
 
