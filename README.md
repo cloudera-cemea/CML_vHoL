@@ -61,7 +61,7 @@ In case of success you should get to this home page of the CDP tenant:
 AMPs (Applied Machine Learning Prototypes) are reference Machine Learning projects that have been built by Cloudera Fast Forward Labs to provide quickstart examples and tutorials. AMPs are deployed into the Cloudera Machine Learning (Cloudera AI) experience, which is a platform you can also build your own Machine Learning use cases on.
 
 - Go to the Workshop CDP Tenant
-- Navigate to the Machine Learning tile from the CDP Menu.
+- Navigate to the Machine Learning tile (CLoudera AI tile in new UI) from the CDP Menu.
 - Click into the Workspace by clicking the Workspace name.
 
 ![workspacelist](images/workspacelist1.png)
