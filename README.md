@@ -64,7 +64,7 @@ AMPs (Applied Machine Learning Prototypes) are reference Machine Learning projec
 - Navigate to the Machine Learning tile (CLoudera AI tile in new UI) from the CDP Menu.
 - Click into the Workbench by clicking the Workbench name.
 
-![workspacelist](images/workspacelist1.png)
+![workspacelist](images/workbenchlist.png)
 
 A Workspace is a cluster that runs on a kubernetes service to provide teams of data scientists a platform to develop, test, train, and ultimately deploy machine learning models. It is designed to deploy a small number of infra resources and then autoscale compute resources as needed when end users implement more workloads and use cases.
 
@@ -95,7 +95,7 @@ In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. 
 | HIVE_TABLE | churn_protype_YOUR UNIQUE VALUE |
  
 <br/>
-<img src="images/envparams1.png" width="70%">
+<img src="images/projectstart.png" width="70%">
  
  <br/>
 - Click **Launch Project**
