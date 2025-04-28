@@ -62,7 +62,7 @@ AMPs (Applied Machine Learning Prototypes) are reference Machine Learning projec
 
 - Go to the Workshop CDP Tenant
 - Navigate to the Machine Learning tile (CLoudera AI tile in new UI) from the CDP Menu.
-- Click into the Workspace by clicking the Workspace name.
+- Click into the Workbench by clicking the Workbench name.
 
 ![workspacelist](images/workspacelist1.png)
 
