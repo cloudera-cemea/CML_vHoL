@@ -39,7 +39,7 @@ We will focus our attention on working within Cloudera AI, using all it has to o
 
 #### Login into the CDP tenant
 
-Welcome to the virtual hands on Lab of April  2nd 2024. You all have been assigned a unique user name.
+Welcome to the virtual hands on Lab of April 29. 2025. You all have been assigned a unique user name.
 
 Search for your first name and the initial of your last name and memorize the assigned user name.
 
