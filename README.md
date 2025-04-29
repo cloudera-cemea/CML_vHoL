@@ -527,13 +527,6 @@ This gathered metadata can either be accessed in the Data Catalog (Tile is in th
 
 In order to access by means of Atlas you can use following steps:
 
-- Click on *Overview*  and find *lineage.yml* file
-- Click on the file to open
-
-![lin1](images/lin1.png)
-
-Take note of the metadata that is present here, including the source table name and the query used to create the training dataset. Additional metadata can be provided here.
-
 - Click on the top left corner menu (Bento menu)
 
 ![lin2](images/lin2.png)
