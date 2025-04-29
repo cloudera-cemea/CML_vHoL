@@ -506,15 +506,26 @@ As an example, this information could be used to trigger the deployment of more 
 
 
 
-## Lab 7: Model Lineage Tracking (20 min)
-
-**IMPORTANT! Make sure you are connected to VPN for this part of the workshop.**
-
-This is needed to access Atlas inside of the CDP Data Lake.
+## Optional Lab 7: Model Lineage Tracking (20 min)
 
 CDP is an end-to-end hybrid enterprise data platform. Every user, workload, and dataset and  machine learning model can be governed from a central location via SDX, the Shared Data Experience.
 
 Under the hood, SDX tracks and secures activity related to each CDP Data Service via “Hooks” and “Plugins”, including Cloudera AI. If you want your models to be logged in SDX you have to add them to the lineage.yml file located in your project home folder.
+
+- Click on *Overview*  and find *lineage.yml* file
+- Click on the file to open
+
+![lin1](images/lin1.png)
+
+Take note of the metadata that is present here, including the source table name and the query used to create the training dataset. Additional metadata can be provided here.
+
+
+This gathered metadata can either be accessed in the Data Catalog (Tile is in the main menu) or Atlas.
+
+
+
+
+In order to access by means of Atlas you can use following steps:
 
 - Click on *Overview*  and find *lineage.yml* file
 - Click on the file to open
