@@ -572,14 +572,3 @@ In this workshop you created an end to end project to support a Machine Learning
 - You explored the foundations of a basic ML Ops pipeline to easily retrain, monitor, and reproduce your model in production. With the Cloudera AI Models interface you unit tested and increased model observability.
 - Finally, you used CDP SDX to log and visualize Model Metadata and Lineage.
 
-## Next Steps
-
-If you want to learn more about Cloudera AI and CDP we invite you to visit the following assets and tutorials or ask your Cloudera Workshop Lead for a follow up.
-- [Learn how to use Cloudera Applied ML Prototypes](https://docs.cloudera.com/machine-learning/cloud/applied-ml-prototypes/topics/ml-amps-overview.html) to discover more Cloudera AI Projects using MLFlow, Streamlit, Tensorflow, PyTorch and other popular libraries. The AMP Catalog is maintained by the Cloudera Fast Forward Labs team and allows you to automatically deploy complex use cases within minutes.
-- [Cloudera AI HowTo](https://github.com/pdefusco/Cloudera AI_HowTo) : A series of tips and tricks for the Cloudera AI beginner
-- [Sentiment Analysis in R](https://github.com/pdefusco/simpsons_sentiment_analysis) : and end to end ML project with SparklyR and GPU training
-- [CSA2Cloudera AI](https://github.com/pdefusco/CSA2Cloudera AI) : Build a real time anomaly detection dashboard with Flink, Cloudera AI, and Streamlit
-- [SDX2Cloudera AI](https://github.com/pdefusco/SDX2Cloudera AI) : Explore ML Governance and Security features in more detail to increase legal compliance and enhance ML Ops best practices.
-- [Cloudera AI2CDE](https://github.com/pdefusco/Cloudera AI2CDE) : Create CI/CD Pipelines for Spark ETL with Cloudera AI Notebooks and CDE Virtual Cluster
-- [API v2](https://github.com/pdefusco/Cloudera AI_AMP_APIv2) : Familiarize yourself with API v2, Cloudera AI's goto Python Library for ML Ops and DevOps
-- [Distributed PyTorch with Horovod](https://github.com/pdefusco/Distributed_PyTorch_Horovod) : A quickstart for distributing Horovod with the Cloudera AI Workers API
